@@ -4,7 +4,9 @@
   "description": "A set of styled components for MojoTech user interfaces.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -17,16 +19,28 @@
   "license": "ISC",
   "homepage": "https://github.com/sethkrasnianski/mojotech-ui/blob/master/README.md",
   "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@storybook/addon-actions": "^4.0.11",
     "@storybook/addon-info": "^4.0.11",
+    "@storybook/addon-links": "^4.0.11",
+    "@storybook/addons": "^4.0.11",
     "@storybook/cli": "^4.0.11",
+    "@storybook/react": "^4.0.11",
     "@types/jest": "^23.3.10",
     "@types/storybook__react": "^4.0.0",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "bable-loader": "0.0.1-security",
     "jest": "^23.6.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.1",
     "webpack": "^4.27.0",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }
