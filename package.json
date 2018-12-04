@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git@github.com:sethkrasnianski/mojotech-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/sethkrasnianski/mojotech-ui/issues"
+  },
   "author": "",
   "license": "ISC"
 }
