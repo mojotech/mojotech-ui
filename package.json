@@ -15,5 +15,8 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/sethkrasnianski/mojotech-ui/blob/master/README.md"
+  "homepage": "https://github.com/sethkrasnianski/mojotech-ui/blob/master/README.md",
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  }
 }
