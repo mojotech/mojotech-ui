@@ -32,6 +32,7 @@
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-links": "^3.3.3",
     "@types/storybook__react": "^4.0.0",
+    "@types/styled-components": "^4.1.4",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
@@ -44,7 +45,9 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "@storybook/addon-options": "^4.1.1",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.2"
   }
 }
