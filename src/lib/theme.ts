@@ -3,7 +3,7 @@ interface Colors {
   black: string;
 }
 
-interface ThemeInterface {
+export interface ThemeInterface {
   colors: Colors;
 }
 
