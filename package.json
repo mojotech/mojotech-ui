@@ -24,7 +24,7 @@
     "@storybook/addon-info": "^4.0.11",
     "@storybook/addon-links": "^4.0.11",
     "@storybook/addons": "^4.0.11",
-    "@storybook/cli": "^4.0.11",
+    "@storybook/cli": "^4.1.11",
     "@storybook/react": "^4.0.11",
     "@types/jest": "^23.3.10",
     "@types/react": "^16.7.13",
@@ -44,6 +44,9 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "emotion-theming": "^10.0.7",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   }
