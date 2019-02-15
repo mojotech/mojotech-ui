@@ -1,20 +1,18 @@
-import * as React from "react"
+import * as React from "react";
+import styled from "../../lib/styled";
+import t from "../../lib/theme";
 
 interface Props {
-  name?: string
+  text?: string;
 }
 
-const Button: React.SFC<Props> = (props) => (
-  <div>
-    Yo, {props.name}!
-    <div>
-      {props.children}
-    </div>
-  </div>
+const StyledButton = styled.button({
+  color: "#fff",
+  background: `${t.colors.mojogreen}`,
+});
+
+const Button: React.SFC<Props> = ({ text, children }) => (
+  <StyledButton>{text || children}</StyledButton>
 );
-
-Button.defaultProps = {
-  name: "Dawg"
-}
 
 export default Button;
