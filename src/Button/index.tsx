@@ -1,18 +1,19 @@
+/** @jsx jsx */
 import * as React from "react";
-import styled from "../../lib/styled";
+import { jsx, css } from "@emotion/core";
 import t from "../../lib/theme";
 
 interface Props {
   text?: string;
 }
 
-const StyledButton = styled.button({
-  color: "#fff",
-  background: `${t.colors.mojogreen}`,
+const styles = css({
+  background: t.colors.mojogreen,
+  color: "white"
 });
 
 const Button: React.SFC<Props> = ({ text, children }) => (
-  <StyledButton>{text || children}</StyledButton>
+  <button css={styles}>{text || children}</button>
 );
 
 export default Button;
