@@ -48,6 +48,7 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "emotion-theming": "^10.0.7",
+    "facepaint": "^1.2.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   }
