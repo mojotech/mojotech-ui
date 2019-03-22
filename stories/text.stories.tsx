@@ -1,6 +1,6 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
-import Text from "../src/Text";
+import Text from "../src/components/Text";
 
 storiesOf("Text", module).add("All Type", () => (
   <React.Fragment>
