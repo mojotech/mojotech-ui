@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prettify": "prettier --write 'src/**/*.{ts, tsx}'"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,7 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "emotion-theming": "^10.0.7",
+    "prettier": "^1.16.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   }
