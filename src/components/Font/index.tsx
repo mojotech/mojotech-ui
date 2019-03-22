@@ -2,8 +2,8 @@
 import * as React from "react";
 import { css, jsx, Global } from "@emotion/core";
 
-import { GT_AMERICA } from "../../lib/font-data";
-import t from "../../lib/theme";
+import { GT_AMERICA } from "../../../lib/font-data";
+import t from "../../../lib/theme";
 
 export default () => {
   React.useEffect(() => {
