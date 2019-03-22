@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx, css } from "@emotion/core";
-import t from "../../lib/theme";
+import t from "../../../lib/theme";
 
 interface Props {
   text?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 const styles = css({
   background: t.colors.mojogreen,
-  color: "white"
+  color: "white",
 });
 
 const Button: React.SFC<Props> = ({ text, children }) => (
