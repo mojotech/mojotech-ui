@@ -15,9 +15,7 @@ const Text: React.FC<Props> = ({ as: T = "p", size = 1, ...props }) => {
   const styles = ({ ...theme }: Theme) =>
     css({
       color: "black",
-      fontWeight: "normal",
-      fontFamily: "sans-serif",
-      fontSize: size && theme.fontSizes[size - 1]
+      fontSize: size && theme.fontSizes[size - 1],
     });
 
   return (
