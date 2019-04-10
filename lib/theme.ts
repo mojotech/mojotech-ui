@@ -2,6 +2,14 @@ export default {
   colors: {
     mojogreen: "#00ba40",
   },
+  spacing: [
+    "calc(4px + (8 - 4) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(8px + (16 - 8) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(16px + (32 - 16) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(44px + (88 - 44) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(88px + (176 - 88) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(176px + (352 - 176) * ((100vw - 400px) / (1800 - 600)))",
+  ],
   fonts: {
     main: `'GT America Light', system-ui, sans-serif`,
     display: `'Altis Regular', system-ui, sans-serif`,
