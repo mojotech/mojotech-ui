@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sethkrasnianski/mojotech-ui.git"
+    "url": "git@github.com:mojotech/mojotech-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/sethkrasnianski/mojotech-ui/issues"
+    "url": "https://github.com/mojotech/mojotech-ui/issues"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/sethkrasnianski/mojotech-ui/blob/master/README.md",
+  "homepage": "https://github.com/mojotech/mojotech-ui/blob/master/README.md",
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@storybook/addon-actions": "^5.0.1",
