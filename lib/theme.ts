@@ -12,7 +12,7 @@ export default {
   ],
   fonts: {
     main: `'GT America Light', system-ui, sans-serif`,
-    display: `'Altis Regular', system-ui, sans-serif`,
+    display: `'altis-mojoregular', system-ui, sans-serif`,
   },
   maxWidths: ["904px", "1400px"],
   fontSizes: [
