@@ -6,4 +6,5 @@ export type Theme = {
   maxWidths: string[];
   fonts: { main: string; display: string };
   fontSizes: string[];
+  lineHeights: number[];
 };

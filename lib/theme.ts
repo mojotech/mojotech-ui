@@ -14,7 +14,6 @@ export default {
     main: `'GT America Light', system-ui, sans-serif`,
     display: `'altis-mojoregular', system-ui, sans-serif`,
   },
-  maxWidths: ["904px", "1400px"],
   fontSizes: [
     "calc(16px + (18 - 16) * ((100vw - 400px) / (1800 - 600)))",
     "calc(18px + (24 - 18) * ((100vw - 400px) / (1800 - 600)))",
@@ -23,4 +22,6 @@ export default {
     "calc(24px + (56 - 24) * ((100vw - 400px) / (1800 - 600)))",
     "calc(32px + (75 - 32) * ((100vw - 400px) / (1800 - 600)))",
   ],
+  lineHeights: [2, 1.5, 1.2],
+  maxWidths: ["904px", "1400px"],
 };
