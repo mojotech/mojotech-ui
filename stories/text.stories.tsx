@@ -4,7 +4,7 @@ import Text from "../src/components/Text";
 
 storiesOf("Text", module).add("All Type", () => (
   <React.Fragment>
-    <Text size={5} as="h1">
+    <Text leading={3} display size={5} as="h1">
       We’re builders.
     </Text>
     <Text size={4} as="h2">

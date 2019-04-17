@@ -12,14 +12,16 @@ export default {
   ],
   fonts: {
     main: `'GT America Light', system-ui, sans-serif`,
-    display: `'Altis Regular', system-ui, sans-serif`,
+    display: `'altis-mojoregular', system-ui, sans-serif`,
   },
-  maxWidths: ["904px", "1400px"],
   fontSizes: [
-    "calc(16px + (22 - 16) * ((100vw - 400px) / (1800 - 600)))",
-    "calc(18px + (28 - 18) * ((100vw - 400px) / (1800 - 600)))",
-    "calc(18px + (38 - 18) * ((100vw - 400px) / (1800 - 600)))",
-    "calc(24px + (54 - 24) * ((100vw - 400px) / (1800 - 600)))",
-    "calc(24px + (66 - 24) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(16px + (18 - 16) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(18px + (24 - 18) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(18px + (32 - 18) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(18px + (42 - 18) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(24px + (56 - 24) * ((100vw - 400px) / (1800 - 600)))",
+    "calc(32px + (75 - 32) * ((100vw - 400px) / (1800 - 600)))",
   ],
+  lineHeights: [2, 1.5, 1.2],
+  maxWidths: ["904px", "1400px"],
 };

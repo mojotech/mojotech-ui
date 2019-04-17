@@ -1,28 +1,40 @@
 /** @jsx jsx */
 import * as React from "react";
-import { css, jsx } from "@emotion/core";
+import { jsx } from "@emotion/core";
 import { Theme } from "../../types/global";
 
 type TextTags = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type FontSizes = 1 | 2 | 3 | 4 | 5;
+type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
 
 interface Props {
   as?: TextTags;
   size?: FontSizes;
+  leading?: SpaceScale;
+  display?: boolean;
 }
 
-const Text: React.FC<Props> = ({ as: T = "p", size = 1, ...props }) => {
-  const styles = ({ ...theme }: Theme) =>
-    css({
-      color: "black",
+const Text: React.FC<Props> = ({
+  as: T = "p",
+  size = 1,
+  leading,
+  display,
+  ...props
+}) => (
+  <T
+    css={({ ...theme }: Theme) => ({
+      fontFamily: display ? theme.fonts.display : theme.fonts.main,
       fontSize: size && theme.fontSizes[size - 1],
-    });
-
-  return (
-    <T css={styles} {...props}>
-      {props.children}
-    </T>
-  );
-};
+      lineHeight:
+        size === 5
+          ? theme.lineHeights[2]
+          : size === 1
+          ? theme.lineHeights[0]
+          : theme.lineHeights[1],
+      marginBottom: leading ? theme.spacing[leading] : theme.spacing[size - 1],
+    })}
+    {...props}
+  />
+);
 
 export default Text;
