@@ -31,5 +31,8 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    library: "mojo-ui",
+    libraryTarget: "umd",
+    umdNamedDefine: true,
   },
 };
