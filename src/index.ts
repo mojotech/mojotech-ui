@@ -5,3 +5,4 @@ export { default as Font } from "./components/Font";
 export { default as Wrap } from "./components/Wrap";
 export { default as Row } from "./components/Row";
 export { default as Column } from "./components/Column";
+export { default as SchemeProvider } from "./components/SchemeProvider";

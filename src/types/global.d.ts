@@ -1,7 +1,24 @@
 export type Theme = {
   spacing: string[];
-  color: {
+  colors: {
     mojogreen: string;
+    white: string;
+    dark: string;
+    gray: string;
+    scheme: {
+      dark: {
+        bg: string;
+        fg: string;
+      };
+      light: {
+        bg: string;
+        fg: string;
+      };
+      gray: {
+        bg: string;
+        fg: string;
+      };
+    };
   };
   maxWidths: string[];
   fonts: { main: string; display: string };
