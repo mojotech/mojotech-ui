@@ -12,11 +12,13 @@ interface Props {
   size?: FontSizes;
   leading?: SpaceScale;
   display?: boolean;
+  label?: boolean;
 }
 
 const Text: React.FC<Props> = ({
   as: T = "p",
   size = 1,
+  label = false,
   leading,
   display,
   ...props
@@ -32,6 +34,7 @@ const Text: React.FC<Props> = ({
           ? theme.lineHeights[0]
           : theme.lineHeights[1],
       marginBottom: leading ? theme.spacing[leading] : theme.spacing[size - 1],
+      opacity: label ? 0.5 : 1,
     })}
     {...props}
   />
