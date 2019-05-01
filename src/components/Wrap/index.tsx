@@ -11,9 +11,9 @@ interface Props {
   size?: MaxWidths;
 }
 
-const Wrap: React.FC<Props> = ({ as: W = "div", size = 1, ...props }) => {
+const Wrap: React.FC<Props> = ({ as: El = "div", size = 1, ...props }) => {
   return (
-    <W
+    <El
       css={({ ...theme }: Theme) =>
         mq({
           paddingLeft: theme.spacing[3],
