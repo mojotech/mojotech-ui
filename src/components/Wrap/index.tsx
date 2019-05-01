@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import * as React from "react";
+import { mq } from "lib/utils";
 import { jsx } from "@emotion/core";
-import { mq } from "../../../lib/utils";
-import { Theme } from "../../types/global";
+import { Theme } from "types/global";
 
 type MaxWidths = 1 | 2;
 

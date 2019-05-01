@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx, css } from "@emotion/core";
-import t from "../../../lib/theme";
+import t from "lib/theme";
 
 interface Props {
   text?: string;

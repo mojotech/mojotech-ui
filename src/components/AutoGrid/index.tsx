@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { Theme } from "../../types/global";
-import { mq } from "../../../lib/utils";
+import { Theme } from "types/global";
+import { mq } from "lib/utils";
 
 type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
 
