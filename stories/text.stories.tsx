@@ -23,5 +23,8 @@ storiesOf("Text", module).add("All Type", () => (
       to identify issues quickly and adjust in real-time to ensure we are
       tracking well against expectations and constantly delivering value.
     </Text>
+    <Text size={2} as="a">
+      This is a link
+    </Text>
   </React.Fragment>
 ));
