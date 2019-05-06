@@ -3,7 +3,7 @@ import * as React from "react";
 import { jsx } from "@emotion/core";
 import { Theme } from "types/global";
 
-type TextTags = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span";
+type TextTags = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "a";
 type FontSizes = 1 | 2 | 3 | 4 | 5 | 6;
 type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
 
