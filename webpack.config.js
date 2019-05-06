@@ -1,4 +1,5 @@
 const path = require("path");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -8,15 +9,16 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: "awesome-typescript-loader",
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    plugins: [new TsconfigPathsPlugin()],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist")
-  }
+    path: path.resolve(__dirname, "dist"),
+  },
 };

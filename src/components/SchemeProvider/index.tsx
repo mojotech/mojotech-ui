@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx } from "@emotion/core";
-import { Theme } from "../../types/global";
+import { Theme } from "types/global";
 
 type ColorScheme = "dark" | "light" | "gray";
 

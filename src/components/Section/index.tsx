@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx } from "@emotion/core";
-import { Theme } from "../../types/global";
+import { Theme } from "types/global";
 
 type MarginBottom = 1 | 2 | 3 | 4 | 5 | 6;
 
