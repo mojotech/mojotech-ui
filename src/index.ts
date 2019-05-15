@@ -9,3 +9,4 @@ export { default as Column } from "components/Column";
 export { default as SchemeProvider } from "components/SchemeProvider";
 export { default as Section } from "components/Section";
 export { default as AutoGrid } from "components/AutoGrid";
+export { default as ThemeDecorator } from "components/ThemeDecorator";
