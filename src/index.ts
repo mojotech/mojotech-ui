@@ -7,3 +7,4 @@ export { default as Wrap } from "components/Wrap";
 export { default as Row } from "components/Row";
 export { default as Column } from "components/Column";
 export { default as SchemeProvider } from "components/SchemeProvider";
+export { default as Section } from "components/Section";
