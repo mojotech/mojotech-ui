@@ -8,3 +8,4 @@ export { default as Row } from "components/Row";
 export { default as Column } from "components/Column";
 export { default as SchemeProvider } from "components/SchemeProvider";
 export { default as Section } from "components/Section";
+export { default as AutoGrid } from "components/AutoGrid";
