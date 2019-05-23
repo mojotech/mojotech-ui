@@ -31,5 +31,5 @@ export default {
     "calc(32px + (75 - 32) * ((100vw - 400px) / (1800 - 600)))",
   ],
   lineHeights: [2, 1.5, 1.2],
-  maxWidths: ["66.666vw", "100vw"],
+  maxWidths: [["66.66vw", "55vw"], ["100vw", "90vw"]],
 };

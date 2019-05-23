@@ -20,7 +20,11 @@ const Wrap: React.FC<Props> = ({ as: El = "div", size = 1, ...props }) => {
           paddingRight: theme.spacing[3],
           marginLeft: "auto",
           marginRight: "auto",
-          maxWidth: ["100%", size && theme.maxWidths[size - 1]],
+          maxWidth: [
+            "100%",
+            size && theme.maxWidths[size - 1][0],
+            size && theme.maxWidths[size - 1][1],
+          ],
           width: "100%",
         })
       }

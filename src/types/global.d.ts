@@ -20,7 +20,7 @@ export type Theme = {
       };
     };
   };
-  maxWidths: string[];
+  maxWidths: Array<string[]>;
   fonts: { main: string; display: string };
   fontSizes: string[];
   lineHeights: number[];
