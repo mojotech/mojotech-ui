@@ -1,3 +1,4 @@
+export { Theme } from "types/global";
 export { default as BaseTheme } from "lib/theme";
 export { default as Button } from "components/Button";
 export { default as Text } from "components/Text";
