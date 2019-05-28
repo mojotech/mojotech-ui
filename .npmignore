@@ -5,3 +5,6 @@ tsconfig.json
 webpack.config.js
 scripts/
 .prettierrc
+src/
+.nvmrc
+.npmrc.ci
