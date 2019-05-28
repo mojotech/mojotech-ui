@@ -1,6 +1,6 @@
 {
   "name": "@mojotech/mojo-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A set of styled components for MojoTech user interfaces.",
   "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
