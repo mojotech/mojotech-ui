@@ -1,10 +1,60 @@
 version: 2
+
+defaults: &defaults
+  working_directory: /tmp/mojotech-ui
+  docker:
+    - image: circleci/node:8.11
+
 jobs:
   build:
-    docker:
-      - image: circleci/node:8.11
-    working_directory: ~/mojotech-ui
+    <<: *defaults
     steps:
        - checkout
+       - run: cp .npmrc.ci .npmrc
+       - restore_cache:
+           key: v1-dependencies-{{ checksum "package-lock.json" }}
        - run: npm install
+       - save_cache:
+           key: v1-dependencies-{{ checksum "package-lock.json" }}
+           paths:
+             - ./node_modules
        - run: npm run build
+       - persist_to_workspace:
+           root: /tmp
+           paths:
+             - mojotech-ui
+
+  ensure_version_bump:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp
+      - run:
+          name: Ensure version bump
+          command: |
+            ./scripts/npm_version_check.sh
+
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp
+      - run:
+          name: Publish updated NPM package
+          command: |
+            npm publish
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - ensure_version_bump:
+          requires:
+            - build
+      - publish:
+          requires:
+            - ensure_version_bump
+          filters:
+            branches:
+              only: master
