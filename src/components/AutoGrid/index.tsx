@@ -20,6 +20,7 @@ const AutoGrid: React.FC<Props> = ({ gap = 1, columns = [1, 5], ...props }) => (
         gridTemplateColumns: [
           `repeat(${columns[0]}, 1fr)`,
           `repeat(${columns[1]}, 1fr)`,
+          `repeat(${columns[1]}, 1fr)`,
         ],
         gridAutoRows: "min-content",
         gridAutoFlow: "row",
