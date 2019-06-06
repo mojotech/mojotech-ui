@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git@github.com:mojotech/mojotech-ui.git"
   },
+  "release": {
+    "branch": "release"
+  },
   "bugs": {
     "url": "https://github.com/mojotech/mojotech-ui/issues"
   },
