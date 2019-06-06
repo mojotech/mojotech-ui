@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Publish updated NPM package
           command: |
-            npm publish
+            npx semantic-release
 
 workflows:
   version: 2
