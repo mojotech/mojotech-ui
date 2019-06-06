@@ -24,16 +24,6 @@ jobs:
            paths:
              - mojotech-ui
 
-  ensure_version_bump:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: /tmp
-      - run:
-          name: Ensure version bump
-          command: |
-            ./scripts/npm_version_check.sh
-
   publish:
     <<: *defaults
     steps:
@@ -49,12 +39,9 @@ workflows:
   build_and_deploy:
     jobs:
       - build
-      - ensure_version_bump:
-          requires:
-            - build
       - publish:
           requires:
-            - ensure_version_bump
+            - build
           filters:
             branches:
               only: master
