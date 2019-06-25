@@ -37,6 +37,6 @@ export type TextTags =
   | "span"
   | "a";
 
-export type FontSizes = 1 | 2 | 3 | 4 | 5 | 6;
+export type FontSizes = 0 | 1 | 2 | 3 | 4 | 5;
 
-export type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
+export type SpaceScale = 0 | 1 | 2 | 3 | 4 | 5;

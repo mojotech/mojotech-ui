@@ -1,44 +1,47 @@
-/** @jsx jsx */
 import * as React from "react";
-import { jsx } from "@emotion/core";
-import { FontSizes, SpaceScale, TextTags, Theme } from "types/global";
+import styled from "lib/styled";
+import {
+  fontSize,
+  FontSizeProps,
+  spaceSet,
+  SpaceSetProps,
+  get,
+  propTypes,
+} from "onno-react";
+import { TextTags, FontSizes } from "types/global";
 
-interface Props {
+type TextProps = FontSizeProps & SpaceSetProps;
+
+interface Props extends TextProps {
   as?: TextTags;
-  size?: FontSizes;
-  leading?: SpaceScale;
   display?: boolean;
-  label?: boolean;
+  dim?: boolean;
+  fontSize?: FontSizes;
 }
 
-const Text: React.FC<Props> = ({
-  as: T = "p",
-  size = 1,
-  label = false,
-  leading,
-  display,
-  ...props
-}) => (
-  <T
-    css={({ ...theme }: Theme) => ({
-      cursor: T === "a" ? "pointer" : "inherit",
-      fontFamily: display ? theme.fonts.display : theme.fonts.main,
-      fontSize: size && theme.fontSizes[size - 1],
-      lineHeight:
-        size === 5
-          ? theme.lineHeights[2]
-          : size === 1
-          ? theme.lineHeights[0]
-          : theme.lineHeights[1],
-      marginBottom: leading ? theme.spacing[leading] : theme.spacing[size - 1],
-      opacity: label || T === "a" ? 0.5 : 1,
-      transition: "opacity .3s ease",
-      "&:hover": {
-        opacity: 1,
-      },
-    })}
-    {...props}
-  />
+const Text: React.FC<Props> = styled.p<Props>(
+  props => ({
+    fontFamily: props.display
+      ? props.theme.fonts.display
+      : props.theme.fonts.main,
+    marginBottom: get(["spaces", props.fontSize], props.theme),
+    lineHeight:
+      props.fontSize === 4
+        ? props.theme.lineHeights[2]
+        : props.fontSize === 0
+        ? props.theme.lineHeights[0]
+        : props.theme.lineHeights[1],
+    opacity: props.dim ? 0.5 : 1,
+  }),
+  fontSize,
+  spaceSet,
 );
+
+Text.propTypes = propTypes([fontSize, spaceSet]);
+
+Text.defaultProps = {
+  dim: false,
+  fontSize: 0,
+};
 
 export default Text;
