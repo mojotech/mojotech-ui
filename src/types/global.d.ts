@@ -25,3 +25,18 @@ export type Theme = {
   fontSizes: string[];
   lineHeights: number[];
 };
+
+export type TextTags =
+  | "p"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "span"
+  | "a";
+
+export type FontSizes = 1 | 2 | 3 | 4 | 5 | 6;
+
+export type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
