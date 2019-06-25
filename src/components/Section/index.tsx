@@ -17,7 +17,7 @@ const Section: React.FC<Props> = ({
 }) => (
   <S
     css={({ ...theme }: Theme) => ({
-      marginBottom: marginBottom && theme.spacing[marginBottom - 1],
+      marginBottom: marginBottom && theme.spaces[marginBottom - 1],
     })}
     {...props}
   />

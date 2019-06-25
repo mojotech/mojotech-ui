@@ -1,5 +1,5 @@
 export type Theme = {
-  spacing: string[];
+  spaces: string[];
   colors: {
     mojogreen: string;
     white: string;

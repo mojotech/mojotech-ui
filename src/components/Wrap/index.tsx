@@ -16,8 +16,8 @@ const Wrap: React.FC<Props> = ({ as: El = "div", size = 1, ...props }) => {
     <El
       css={({ ...theme }: Theme) =>
         mq({
-          paddingLeft: theme.spacing[3],
-          paddingRight: theme.spacing[3],
+          paddingLeft: theme.spaces[3],
+          paddingRight: theme.spaces[3],
           marginLeft: "auto",
           marginRight: "auto",
           maxWidth: [

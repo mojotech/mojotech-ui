@@ -10,7 +10,7 @@ export default {
       gray: { bg: "#F0F0F0", fg: "#14111D" },
     },
   },
-  spacing: [
+  spaces: [
     "calc(4px + (8 - 4) * ((100vw - 400px) / (1800 - 600)))",
     "calc(8px + (16 - 8) * ((100vw - 400px) / (1800 - 600)))",
     "calc(16px + (32 - 16) * ((100vw - 400px) / (1800 - 600)))",

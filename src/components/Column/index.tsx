@@ -7,8 +7,8 @@ const Column: React.FC = props => (
     css={({ ...theme }: Theme) => ({
       flexBasis: "calc((30rem - 100%) * 9999)",
       flexGrow: 1,
-      marginLeft: theme.spacing[2],
-      marginRight: theme.spacing[2],
+      marginLeft: theme.spaces[2],
+      marginRight: theme.spaces[2],
     })}
     {...props}
   />

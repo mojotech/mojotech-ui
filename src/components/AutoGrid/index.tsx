@@ -16,7 +16,7 @@ const AutoGrid: React.FC<Props> = ({ gap = 1, columns = [1, 5], ...props }) => (
       mq({
         display: "grid",
         width: "100%",
-        gridGap: gap && theme.spacing[gap],
+        gridGap: gap && theme.spaces[gap],
         gridTemplateColumns: [
           `repeat(${columns[0]}, 1fr)`,
           `repeat(${columns[1]}, 1fr)`,
