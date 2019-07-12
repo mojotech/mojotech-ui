@@ -52,9 +52,11 @@ workflows:
       - ensure_version_bump:
           requires:
             - build
+          only:
+            - release
       - publish:
           requires:
             - ensure_version_bump
           filters:
             branches:
-              only: master
+              only: release
