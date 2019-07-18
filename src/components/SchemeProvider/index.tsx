@@ -12,8 +12,8 @@ interface Props {
 const SchemeProvider: React.FC<Props> = ({ scheme = "dark", ...props }) => (
   <main
     css={({ ...theme }: Theme) => ({
-      background: theme.scheme[scheme].bg,
-      color: theme.scheme[scheme].fg,
+      background: theme.schemes[scheme].bg,
+      color: theme.schemes[scheme].fg,
     })}
     {...props}
   />

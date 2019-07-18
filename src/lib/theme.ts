@@ -5,7 +5,7 @@ export default {
     dark: "#14111D",
     gray: "#F0F0F0",
   },
-  scheme: {
+  schemes: {
     dark: { bg: "#14111D", fg: "#ffffff" },
     light: { bg: "#ffffff", fg: "#14111D" },
     gray: { bg: "#F0F0F0", fg: "#14111D" },
