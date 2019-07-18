@@ -8,16 +8,16 @@ export type Theme = {
   };
   schemes: {
     dark: {
-      bg: string;
-      fg: string;
+      backgroundColor: string;
+      color: string;
     };
     light: {
-      bg: string;
-      fg: string;
+      backgroundColor: string;
+      color: string;
     };
     gray: {
-      bg: string;
-      fg: string;
+      backgroundColor: string;
+      color: string;
     };
   };
   maxWidths: Array<string[]>;
