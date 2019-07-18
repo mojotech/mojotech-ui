@@ -25,6 +25,7 @@ export type Theme = {
   fontSizes: string[];
   lineHeights: number[];
   opacities: number[];
+  breakpoints: number[];
 };
 
 export type TextTags =
