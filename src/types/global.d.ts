@@ -20,8 +20,8 @@ export type Theme = {
       };
     };
   };
-  maxWidths: Array<string[]>;
   fontFamilies: { main: string; display: string };
+  maxWidths: string[];
   fontSizes: string[];
   lineHeights: number[];
   opacities: number[];
