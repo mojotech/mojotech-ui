@@ -37,7 +37,7 @@ const TextInput: React.FC<Props> = ({ label = "Label", ...props }) => {
           transition: ".3s ease",
         }}
       >
-        <Text size={labelSize}>{label}</Text>
+        <Text fontSize={labelSize}>{label}</Text>
       </label>
       <input
         onBlur={e => {
