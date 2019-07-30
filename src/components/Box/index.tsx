@@ -1,5 +1,3 @@
-import * as React from "react";
-import styled from "lib/styled";
 import {
   backgroundSet,
   BackgroundSetProps,
@@ -20,6 +18,9 @@ import {
   propTypes,
 } from "onno-react";
 
+import styled from "lib/styled";
+import { polymorph } from "lib/polymorph";
+
 export type BoxProps = BackgroundSetProps &
   BorderSetProps &
   SpaceSetProps &
@@ -29,7 +30,7 @@ export type BoxProps = BackgroundSetProps &
   LayoutSetProps &
   TransformSetProps;
 
-const Box: React.FC<BoxProps> = styled.div<BoxProps>(
+const Box = styled(polymorph<BoxProps>("div"))(
   backgroundSet,
   borderSet,
   displaySet,
