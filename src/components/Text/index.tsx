@@ -9,13 +9,12 @@ import {
   OpacityProps,
   get,
 } from "onno-react";
-import { Theme, TextTags } from "types/global";
+import { Theme } from "types/global";
+import { polymorph, PolymorphProps } from "lib/polymorph";
 
-type TextProps = TextSetProps & SpaceSetProps & OpacityProps;
+type TextProps = TextSetProps & SpaceSetProps & OpacityProps & PolymorphProps;
 
-interface Props extends TextProps {
-  as?: TextTags;
-}
+interface Props extends TextProps {}
 
 const getLineHeights = (size: any, theme: Theme) => {
   switch (size) {
@@ -28,8 +27,8 @@ const getLineHeights = (size: any, theme: Theme) => {
   }
 };
 
-const Text: React.FC<Props> = styled("p")(
-  (props: any) => ({
+const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
+  props => ({
     marginBottom: get(["spaces", props.fontSize], props.theme),
     lineHeight: getLineHeights(props.fontSize, props.theme),
   }),
