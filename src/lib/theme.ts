@@ -18,7 +18,7 @@ export default {
     "calc(88px + (176 - 88) * ((100vw - 400px) / (1800 - 600)))",
     "calc(176px + (352 - 176) * ((100vw - 400px) / (1800 - 600)))",
   ],
-  fonts: {
+  fontFamilies: {
     main: `'GT America Light', system-ui, sans-serif`,
     display: `'altis-mojoregular', system-ui, sans-serif`,
   },

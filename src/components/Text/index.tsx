@@ -22,8 +22,8 @@ interface Props extends TextProps {
 const Text: React.FC<Props> = styled.p<Props>(
   props => ({
     fontFamily: props.display
-      ? props.theme.fonts.display
-      : props.theme.fonts.main,
+      ? props.theme.fontFamilies.display
+      : props.theme.fontFamilies.main,
     marginBottom: get(["spaces", props.fontSize], props.theme),
     lineHeight:
       props.fontSize === 4
