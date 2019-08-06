@@ -32,4 +32,5 @@ export default {
   ],
   lineHeights: [2, 1.5, 1.2],
   maxWidths: [["66.66vw", "55vw"], ["100vw", "90vw"]],
+  opacities: [0.5, 1],
 };

@@ -24,6 +24,7 @@ export type Theme = {
   fontFamilies: { main: string; display: string };
   fontSizes: string[];
   lineHeights: number[];
+  opacities: number[];
 };
 
 export type TextTags =
