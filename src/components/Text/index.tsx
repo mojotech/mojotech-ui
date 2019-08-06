@@ -1,47 +1,46 @@
 import * as React from "react";
 import styled from "lib/styled";
 import {
-  fontSize,
-  FontSizeProps,
+  textSet,
+  TextSetProps,
   spaceSet,
   SpaceSetProps,
+  opacity,
+  OpacityProps,
   get,
-  propTypes,
 } from "onno-react";
-import { TextTags, FontSizes } from "types/global";
+import { Theme, TextTags } from "types/global";
 
-type TextProps = FontSizeProps & SpaceSetProps;
+type TextProps = TextSetProps & SpaceSetProps & OpacityProps;
 
 interface Props extends TextProps {
   as?: TextTags;
-  display?: boolean;
-  dim?: boolean;
-  fontSize?: FontSizes;
 }
 
-const Text: React.FC<Props> = styled.p<Props>(
-  props => ({
-    fontFamily: props.display
-      ? props.theme.fontFamilies.display
-      : props.theme.fontFamilies.main,
+const getLineHeights = (size: any, theme: Theme) => {
+  switch (size) {
+    case 4:
+      return theme.lineHeights[2];
+    case 0:
+      return theme.lineHeights[0];
+    default:
+      return theme.lineHeights[1];
+  }
+};
+
+const Text: React.FC<Props> = styled("p")(
+  (props: any) => ({
     marginBottom: get(["spaces", props.fontSize], props.theme),
-    lineHeight:
-      props.fontSize === 4
-        ? props.theme.lineHeights[2]
-        : props.fontSize === 0
-        ? props.theme.lineHeights[0]
-        : props.theme.lineHeights[1],
-    opacity: props.dim ? 0.5 : 1,
+    lineHeight: getLineHeights(props.fontSize, props.theme),
   }),
-  fontSize,
+  opacity,
   spaceSet,
+  textSet,
 );
 
-Text.propTypes = propTypes([fontSize, spaceSet]);
-
 Text.defaultProps = {
-  dim: false,
   fontSize: 0,
+  fontFamily: "main",
 };
 
 export default Text;
