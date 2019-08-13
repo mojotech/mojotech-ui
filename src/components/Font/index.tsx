@@ -25,7 +25,7 @@ export default () => {
           -moz-osx-font-smoothing: grayscale;
         }
         body {
-          font-family: ${t.fonts.display};
+          font-family: ${t.fontFamilies.display};
         }
       `}
     />

@@ -18,7 +18,7 @@ export default {
     "calc(88px + (176 - 88) * ((100vw - 400px) / (1800 - 600)))",
     "calc(176px + (352 - 176) * ((100vw - 400px) / (1800 - 600)))",
   ],
-  fonts: {
+  fontFamilies: {
     main: `'GT America Light', system-ui, sans-serif`,
     display: `'altis-mojoregular', system-ui, sans-serif`,
   },
@@ -32,4 +32,5 @@ export default {
   ],
   lineHeights: [2, 1.5, 1.2],
   maxWidths: [["66.66vw", "55vw"], ["100vw", "90vw"]],
+  opacities: [0.5, 1],
 };

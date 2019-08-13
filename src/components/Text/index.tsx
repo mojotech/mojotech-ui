@@ -1,47 +1,45 @@
 import * as React from "react";
 import styled from "lib/styled";
 import {
-  fontSize,
-  FontSizeProps,
+  textSet,
+  TextSetProps,
   spaceSet,
   SpaceSetProps,
+  opacity,
+  OpacityProps,
   get,
-  propTypes,
 } from "onno-react";
-import { TextTags, FontSizes } from "types/global";
+import { Theme } from "types/global";
+import { polymorph, PolymorphProps } from "lib/polymorph";
 
-type TextProps = FontSizeProps & SpaceSetProps;
+type TextProps = TextSetProps & SpaceSetProps & OpacityProps & PolymorphProps;
 
-interface Props extends TextProps {
-  as?: TextTags;
-  display?: boolean;
-  dim?: boolean;
-  fontSize?: FontSizes;
-}
+interface Props extends TextProps {}
 
-const Text: React.FC<Props> = styled.p<Props>(
+const getLineHeights = (size: any, theme: Theme) => {
+  switch (size) {
+    case 4:
+      return theme.lineHeights[2];
+    case 0:
+      return theme.lineHeights[0];
+    default:
+      return theme.lineHeights[1];
+  }
+};
+
+const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
   props => ({
-    fontFamily: props.display
-      ? props.theme.fonts.display
-      : props.theme.fonts.main,
     marginBottom: get(["spaces", props.fontSize], props.theme),
-    lineHeight:
-      props.fontSize === 4
-        ? props.theme.lineHeights[2]
-        : props.fontSize === 0
-        ? props.theme.lineHeights[0]
-        : props.theme.lineHeights[1],
-    opacity: props.dim ? 0.5 : 1,
+    lineHeight: getLineHeights(props.fontSize, props.theme),
   }),
-  fontSize,
+  opacity,
   spaceSet,
+  textSet,
 );
 
-Text.propTypes = propTypes([fontSize, spaceSet]);
-
 Text.defaultProps = {
-  dim: false,
   fontSize: 0,
+  fontFamily: "main",
 };
 
 export default Text;
