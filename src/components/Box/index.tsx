@@ -19,7 +19,7 @@ import {
 } from "onno-react";
 
 import styled from "lib/styled";
-import { polymorph } from "lib/polymorph";
+import { polymorph, PolymorphProps } from "lib/polymorph";
 
 export type BoxProps = BackgroundSetProps &
   BorderSetProps &
@@ -28,7 +28,8 @@ export type BoxProps = BackgroundSetProps &
   FlexChildSetProps &
   GridChildSetProps &
   LayoutSetProps &
-  TransformSetProps;
+  TransformSetProps &
+  PolymorphProps;
 
 const Box = styled(polymorph<BoxProps>("div"))(
   backgroundSet,
