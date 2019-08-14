@@ -1,33 +1,15 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-import { Theme } from "types/global";
-import { mq } from "lib/utils";
+import * as React from "react";
+import styled from "lib/styled";
+import Grid, { GridProps } from "components/Grid";
 
-type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
+const AutoGrid: React.FC<GridProps> = styled(Grid)();
 
-interface Props {
-  columns?: number[];
-  gap?: SpaceScale;
-}
-
-const AutoGrid: React.FC<Props> = ({ gap = 1, columns = [1, 5], ...props }) => (
-  <div
-    css={({ ...theme }: Theme) =>
-      mq({
-        display: "grid",
-        width: "100%",
-        gridGap: gap && theme.spaces[gap],
-        gridTemplateColumns: [
-          `repeat(${columns[0]}, 1fr)`,
-          `repeat(${columns[1]}, 1fr)`,
-          `repeat(${columns[1]}, 1fr)`,
-        ],
-        gridAutoRows: "min-content",
-        gridAutoFlow: "row",
-      })
-    }
-    {...props}
-  />
-);
+AutoGrid.defaultProps = {
+  ...Grid.defaultProps,
+  gridGap: 1,
+  gridTemplateColumns: ["repeat(1, 1fr)", "repeat(5, 1fr)"],
+  gridAutoRows: "min-content",
+  gridAutoFlow: "row",
+};
 
 export default AutoGrid;

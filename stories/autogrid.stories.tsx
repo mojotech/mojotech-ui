@@ -10,7 +10,7 @@ const styles = css({
 });
 
 storiesOf("AutoGrid", module).add("Grid", () => (
-  <AutoGrid columns={[1, 5]}>
+  <AutoGrid>
     <div css={styles} />
     <div css={styles} />
     <div css={styles} />
