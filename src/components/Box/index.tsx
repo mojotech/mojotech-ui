@@ -31,7 +31,7 @@ export type BoxProps = BackgroundSetProps &
   TransformSetProps &
   PolymorphProps;
 
-const Box = styled(polymorph<BoxProps>("div"))(
+const Box = styled(polymorph<BoxProps>("div"))<BoxProps>(
   backgroundSet,
   borderSet,
   displaySet,
