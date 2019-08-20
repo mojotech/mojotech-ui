@@ -1,22 +1,28 @@
-/** @jsx jsx */
 import * as React from "react";
-import { jsx } from "@emotion/core";
-import { Theme } from "types/global";
+import { variant, colorSet, ColorSetProps } from "onno-react";
+import styled from "lib/styled";
+import Box, { BoxProps } from "components/Box";
 
 type ColorScheme = "dark" | "light" | "gray";
 
-interface Props {
+type SchemeProviderProps = ColorSetProps & BoxProps;
+
+interface Props extends SchemeProviderProps {
   scheme?: ColorScheme;
 }
 
-const SchemeProvider: React.FC<Props> = ({ scheme = "dark", ...props }) => (
-  <main
-    css={({ ...theme }: Theme) => ({
-      background: theme.colors.scheme[scheme].bg,
-      color: theme.colors.scheme[scheme].fg,
-    })}
-    {...props}
-  />
-);
+const schemeSet = variant({
+  propsKeys: ["scheme"],
+  themeKeys: ["schemes"],
+  renderers: [colorSet],
+});
+
+const SchemeProvider: React.FC<Props> = styled(Box)(schemeSet);
+
+const schemeProviderDefaultProps: Props = {
+  scheme: "dark",
+};
+
+SchemeProvider.defaultProps = schemeProviderDefaultProps;
 
 export default SchemeProvider;

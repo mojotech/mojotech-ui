@@ -4,11 +4,11 @@ export default {
     white: "#ffffff",
     dark: "#14111D",
     gray: "#F0F0F0",
-    scheme: {
-      dark: { bg: "#14111D", fg: "#ffffff" },
-      light: { bg: "#ffffff", fg: "#14111D" },
-      gray: { bg: "#F0F0F0", fg: "#14111D" },
-    },
+  },
+  schemes: {
+    dark: { backgroundColor: "#14111D", color: "#ffffff" },
+    light: { backgroundColor: "#ffffff", color: "#14111D" },
+    gray: { backgroundColor: "#F0F0F0", color: "#14111D" },
   },
   spaces: [
     "calc(4px + (8 - 4) * ((100vw - 400px) / (1800 - 600)))",

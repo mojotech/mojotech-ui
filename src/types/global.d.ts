@@ -5,19 +5,19 @@ export type Theme = {
     white: string;
     dark: string;
     gray: string;
-    scheme: {
-      dark: {
-        bg: string;
-        fg: string;
-      };
-      light: {
-        bg: string;
-        fg: string;
-      };
-      gray: {
-        bg: string;
-        fg: string;
-      };
+  };
+  schemes: {
+    dark: {
+      backgroundColor: string;
+      color: string;
+    };
+    light: {
+      backgroundColor: string;
+      color: string;
+    };
+    gray: {
+      backgroundColor: string;
+      color: string;
     };
   };
   fontFamilies: { main: string; display: string };
