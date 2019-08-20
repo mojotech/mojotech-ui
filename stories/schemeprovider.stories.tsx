@@ -11,7 +11,7 @@ import Text from "../src/components/Text";
 storiesOf("SchemeProvider", module).add("Schemes", () => (
   <React.Fragment>
     <SchemeProvider>
-      <Wrap size={2}>
+      <Wrap maxWidth={[0, 4, 3]}>
         <svg
           css={{
             height: 50,
@@ -30,7 +30,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
           </g>
         </svg>
       </Wrap>
-      <Wrap size={1}>
+      <Wrap>
         <Row>
           <Column>
             <Text as="h3" fontSize={1}>
@@ -78,7 +78,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
       </Wrap>
     </SchemeProvider>
     <SchemeProvider scheme="light">
-      <Wrap size={1}>
+      <Wrap>
         <Row>
           <Column>
             <Text as="h3" fontSize={1}>
