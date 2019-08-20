@@ -7,12 +7,24 @@ import {
   SpaceSetProps,
   opacity,
   OpacityProps,
+  layoutSet,
+  LayoutSetProps,
+  transformSet,
+  TransformSetProps,
+  transition,
+  TransitionProps,
   get,
 } from "onno-react";
 import { Theme } from "types/global";
 import { polymorph, PolymorphProps } from "lib/polymorph";
 
-type TextProps = TextSetProps & SpaceSetProps & OpacityProps & PolymorphProps;
+type TextProps = TextSetProps &
+  SpaceSetProps &
+  OpacityProps &
+  LayoutSetProps &
+  TransformSetProps &
+  TransitionProps &
+  PolymorphProps;
 
 interface Props extends TextProps {}
 
@@ -32,8 +44,11 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
     marginBottom: get(["spaces", props.fontSize], props.theme),
     lineHeight: getLineHeights(props.fontSize, props.theme),
   }),
+  layoutSet,
   opacity,
   spaceSet,
+  transition,
+  transformSet,
   textSet,
 );
 
