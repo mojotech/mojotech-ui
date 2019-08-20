@@ -37,6 +37,7 @@ export type TextTags =
   | "h5"
   | "h6"
   | "span"
+  | "label"
   | "a";
 
 export type FontSizes = 0 | 1 | 2 | 3 | 4 | 5;
