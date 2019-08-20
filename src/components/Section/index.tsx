@@ -1,26 +1,13 @@
-/** @jsx jsx */
 import * as React from "react";
-import { jsx } from "@emotion/core";
-import { Theme } from "types/global";
+import styled from "lib/styled";
+import Box, { BoxProps } from "components/Box";
 
-type MarginBottom = 1 | 2 | 3 | 4 | 5 | 6;
+const Section: React.FC<BoxProps> = styled(Box)<BoxProps>();
 
-interface Props {
-  as?: string;
-  marginBottom?: MarginBottom;
-}
-
-const Section: React.FC<Props> = ({
-  as: S = "section",
-  marginBottom = 6,
-  ...props
-}) => (
-  <S
-    css={({ ...theme }: Theme) => ({
-      marginBottom: marginBottom && theme.spaces[marginBottom - 1],
-    })}
-    {...props}
-  />
-);
+Section.defaultProps = {
+  ...Box.defaultProps,
+  as: "section",
+  marginBottom: 5,
+};
 
 export default Section;
