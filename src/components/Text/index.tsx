@@ -18,7 +18,7 @@ import {
 import { Theme } from "types/global";
 import { polymorph, PolymorphProps } from "lib/polymorph";
 
-type TextProps = TextSetProps &
+export type TextProps = TextSetProps &
   SpaceSetProps &
   OpacityProps &
   LayoutSetProps &
