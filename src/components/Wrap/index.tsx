@@ -12,4 +12,6 @@ Wrap.defaultProps = {
   width: "100%",
 };
 
+Wrap.displayName = "Wrap";
+
 export default Wrap;

@@ -53,4 +53,6 @@ Box.propTypes = propTypes([
   transformSet,
 ]);
 
+Box.displayName = "Box";
+
 export default Box;

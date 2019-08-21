@@ -12,4 +12,6 @@ Grid.defaultProps = {
   display: "grid",
 };
 
+Grid.displayName = "Grid";
+
 export default Grid;

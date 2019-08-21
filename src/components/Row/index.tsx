@@ -15,4 +15,6 @@ const Row: React.FC = props => (
   />
 );
 
+Row.displayName = "Row";
+
 export default Row;

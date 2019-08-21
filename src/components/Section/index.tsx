@@ -10,4 +10,6 @@ Section.defaultProps = {
   marginBottom: 5,
 };
 
+Section.displayName = "Section";
+
 export default Section;

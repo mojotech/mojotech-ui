@@ -12,4 +12,6 @@ AutoGrid.defaultProps = {
   gridAutoFlow: "row",
 };
 
+AutoGrid.displayName = "AutoGrid";
+
 export default AutoGrid;

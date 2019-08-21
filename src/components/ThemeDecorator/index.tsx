@@ -12,4 +12,6 @@ const ThemeDecorator = ({ ...props }) => (
   </ThemeProvider>
 );
 
+ThemeDecorator.displayName = "ThemeDecorator";
+
 export default ThemeDecorator;
