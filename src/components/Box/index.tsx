@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   backgroundSet,
   BackgroundSetProps,
@@ -29,7 +30,8 @@ export type BoxProps = BackgroundSetProps &
   GridChildSetProps &
   LayoutSetProps &
   TransformSetProps &
-  PolymorphProps;
+  PolymorphProps &
+  React.HTMLAttributes<HTMLDivElement>;
 
 const Box = styled(polymorph<BoxProps>("div"))<BoxProps>(
   backgroundSet,
