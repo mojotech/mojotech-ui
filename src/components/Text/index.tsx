@@ -24,7 +24,8 @@ export type TextProps = TextSetProps &
   LayoutSetProps &
   TransformSetProps &
   TransitionProps &
-  PolymorphProps;
+  PolymorphProps &
+  React.HTMLAttributes<HTMLElement>;
 
 interface Props extends TextProps {}
 
