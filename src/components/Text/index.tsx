@@ -57,4 +57,6 @@ Text.defaultProps = {
   fontFamily: "main",
 };
 
+Text.displayName = "Text";
+
 export default Text;

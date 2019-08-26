@@ -25,4 +25,6 @@ const schemeProviderDefaultProps: Props = {
 
 SchemeProvider.defaultProps = schemeProviderDefaultProps;
 
+SchemeProvider.displayName = "SchemeProvider";
+
 export default SchemeProvider;

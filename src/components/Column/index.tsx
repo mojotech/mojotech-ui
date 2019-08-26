@@ -14,4 +14,6 @@ const Column: React.FC = props => (
   />
 );
 
+Column.displayName = "Column";
+
 export default Column;

@@ -15,4 +15,6 @@ const flexDefaultProps: FlexProps = {
 
 Flex.defaultProps = flexDefaultProps;
 
+Flex.displayName = "Flex";
+
 export default Flex;

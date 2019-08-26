@@ -33,4 +33,6 @@ TextLink.defaultProps = {
   ...Text.defaultProps,
 };
 
+TextLink.displayName = "TextLink";
+
 export default TextLink;

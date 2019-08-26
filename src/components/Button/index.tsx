@@ -59,4 +59,6 @@ Button.defaultProps = {
   fontSize: 2,
 };
 
+Button.displayName = "Button";
+
 export default Button;
