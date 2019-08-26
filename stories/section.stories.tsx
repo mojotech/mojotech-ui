@@ -10,12 +10,12 @@ storiesOf("Section", module).add("Sections", () => (
   <React.Fragment>
     <Section>
       <Wrap size={2}>
-        <Text size={3} as="h2">
+        <Text fontSize={3} as="h2">
           The principles that guide us.
         </Text>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               Agility
             </Text>
             <Text as="p">
@@ -26,7 +26,7 @@ storiesOf("Section", module).add("Sections", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               Team Strength
             </Text>
             <Text as="p">
@@ -39,7 +39,7 @@ storiesOf("Section", module).add("Sections", () => (
         </Row>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -48,7 +48,7 @@ storiesOf("Section", module).add("Sections", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -61,12 +61,12 @@ storiesOf("Section", module).add("Sections", () => (
     </Section>
     <Section>
       <Wrap size={2}>
-        <Text size={3} as="h2">
+        <Text fontSize={3} as="h2">
           The principles that guide us.
         </Text>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               Agility
             </Text>
             <Text as="p">
@@ -77,7 +77,7 @@ storiesOf("Section", module).add("Sections", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               Team Strength
             </Text>
             <Text as="p">
@@ -90,7 +90,7 @@ storiesOf("Section", module).add("Sections", () => (
         </Row>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -99,7 +99,7 @@ storiesOf("Section", module).add("Sections", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={2}>
               User-Centered Design
             </Text>
             <Text as="p">

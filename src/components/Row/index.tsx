@@ -7,12 +7,14 @@ const Row: React.FC = props => (
     css={({ ...theme }: Theme) => ({
       display: "flex",
       flexWrap: "wrap",
-      marginLeft: `calc(${theme.spacing[2]} * -1)`,
-      marginRight: `calc(${theme.spacing[2]} * -1)`,
+      marginLeft: `calc(${theme.spaces[2]} * -1)`,
+      marginRight: `calc(${theme.spaces[2]} * -1)`,
       width: "100%",
     })}
     {...props}
   />
 );
+
+Row.displayName = "Row";
 
 export default Row;

@@ -1,36 +1,17 @@
-/** @jsx jsx */
 import * as React from "react";
-import { mq } from "lib/utils";
-import { jsx } from "@emotion/core";
-import { Theme } from "types/global";
+import styled from "lib/styled";
+import Box, { BoxProps } from "components/Box";
 
-type MaxWidths = 1 | 2;
+const Wrap: React.FC<BoxProps> = styled(Box)();
 
-interface Props {
-  as?: string;
-  size?: MaxWidths;
-}
-
-const Wrap: React.FC<Props> = ({ as: El = "div", size = 1, ...props }) => {
-  return (
-    <El
-      css={({ ...theme }: Theme) =>
-        mq({
-          paddingLeft: theme.spacing[3],
-          paddingRight: theme.spacing[3],
-          marginLeft: "auto",
-          marginRight: "auto",
-          maxWidth: [
-            "100%",
-            size && theme.maxWidths[size - 1][0],
-            size && theme.maxWidths[size - 1][1],
-          ],
-          width: "100%",
-        })
-      }
-      {...props}
-    />
-  );
+Wrap.defaultProps = {
+  height: "100%",
+  marginX: "auto",
+  maxWidth: [0, 2, 1],
+  paddingX: 3,
+  width: "100%",
 };
+
+Wrap.displayName = "Wrap";
 
 export default Wrap;

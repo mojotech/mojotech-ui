@@ -11,7 +11,7 @@ import Text from "../src/components/Text";
 storiesOf("SchemeProvider", module).add("Schemes", () => (
   <React.Fragment>
     <SchemeProvider>
-      <Wrap size={2}>
+      <Wrap maxWidth={[0, 4, 3]}>
         <svg
           css={{
             height: 50,
@@ -30,10 +30,10 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
           </g>
         </svg>
       </Wrap>
-      <Wrap size={1}>
+      <Wrap>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               Agility
             </Text>
             <Text as="p">
@@ -44,7 +44,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               Team Strength
             </Text>
             <Text as="p">
@@ -57,7 +57,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
         </Row>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -66,7 +66,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -78,10 +78,10 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
       </Wrap>
     </SchemeProvider>
     <SchemeProvider scheme="light">
-      <Wrap size={1}>
+      <Wrap>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               Agility
             </Text>
             <Text as="p">
@@ -92,7 +92,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               Team Strength
             </Text>
             <Text as="p">
@@ -105,7 +105,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
         </Row>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -114,7 +114,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -129,7 +129,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
       <Wrap size={2}>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               Agility
             </Text>
             <Text as="p">
@@ -140,7 +140,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               Team Strength
             </Text>
             <Text as="p">
@@ -153,7 +153,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
         </Row>
         <Row>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               User-Centered Design
             </Text>
             <Text as="p">
@@ -162,7 +162,7 @@ storiesOf("SchemeProvider", module).add("Schemes", () => (
             </Text>
           </Column>
           <Column>
-            <Text as="h3" size={2}>
+            <Text as="h3" fontSize={1}>
               User-Centered Design
             </Text>
             <Text as="p">

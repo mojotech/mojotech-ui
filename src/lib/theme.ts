@@ -4,13 +4,13 @@ export default {
     white: "#ffffff",
     dark: "#14111D",
     gray: "#F0F0F0",
-    scheme: {
-      dark: { bg: "#14111D", fg: "#ffffff" },
-      light: { bg: "#ffffff", fg: "#14111D" },
-      gray: { bg: "#F0F0F0", fg: "#14111D" },
-    },
   },
-  spacing: [
+  schemes: {
+    dark: { backgroundColor: "#14111D", color: "#ffffff" },
+    light: { backgroundColor: "#ffffff", color: "#14111D" },
+    gray: { backgroundColor: "#F0F0F0", color: "#14111D" },
+  },
+  spaces: [
     "calc(4px + (8 - 4) * ((100vw - 400px) / (1800 - 600)))",
     "calc(8px + (16 - 8) * ((100vw - 400px) / (1800 - 600)))",
     "calc(16px + (32 - 16) * ((100vw - 400px) / (1800 - 600)))",
@@ -18,7 +18,7 @@ export default {
     "calc(88px + (176 - 88) * ((100vw - 400px) / (1800 - 600)))",
     "calc(176px + (352 - 176) * ((100vw - 400px) / (1800 - 600)))",
   ],
-  fonts: {
+  fontFamilies: {
     main: `'GT America Light', system-ui, sans-serif`,
     display: `'altis-mojoregular', system-ui, sans-serif`,
   },
@@ -31,5 +31,7 @@ export default {
     "calc(32px + (75 - 32) * ((100vw - 400px) / (1800 - 600)))",
   ],
   lineHeights: [2, 1.5, 1.2],
-  maxWidths: [["66.66vw", "55vw"], ["100vw", "90vw"]],
+  opacities: [0.5, 1],
+  maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
+  breakpoints: [0, 600, 1600],
 };

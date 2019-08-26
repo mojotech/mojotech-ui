@@ -1,48 +1,63 @@
-/** @jsx jsx */
 import * as React from "react";
-import { jsx } from "@emotion/core";
+import styled from "lib/styled";
+import {
+  textSet,
+  TextSetProps,
+  spaceSet,
+  SpaceSetProps,
+  opacity,
+  OpacityProps,
+  layoutSet,
+  LayoutSetProps,
+  transformSet,
+  TransformSetProps,
+  transition,
+  TransitionProps,
+  get,
+} from "onno-react";
 import { Theme } from "types/global";
+import { polymorph, PolymorphProps } from "lib/polymorph";
 
-type TextTags = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span" | "a";
-type FontSizes = 1 | 2 | 3 | 4 | 5 | 6;
-type SpaceScale = 1 | 2 | 3 | 4 | 5 | 6;
+export type TextProps = TextSetProps &
+  SpaceSetProps &
+  OpacityProps &
+  LayoutSetProps &
+  TransformSetProps &
+  TransitionProps &
+  PolymorphProps &
+  React.HTMLAttributes<HTMLElement>;
 
-interface Props {
-  as?: TextTags;
-  size?: FontSizes;
-  leading?: SpaceScale;
-  display?: boolean;
-  label?: boolean;
-}
+interface Props extends TextProps {}
 
-const Text: React.FC<Props> = ({
-  as: T = "p",
-  size = 1,
-  label = false,
-  leading,
-  display,
-  ...props
-}) => (
-  <T
-    css={({ ...theme }: Theme) => ({
-      cursor: T === "a" ? "pointer" : "inherit",
-      fontFamily: display ? theme.fonts.display : theme.fonts.main,
-      fontSize: size && theme.fontSizes[size - 1],
-      lineHeight:
-        size === 5
-          ? theme.lineHeights[2]
-          : size === 1
-          ? theme.lineHeights[0]
-          : theme.lineHeights[1],
-      marginBottom: leading ? theme.spacing[leading] : theme.spacing[size - 1],
-      opacity: label || T === "a" ? 0.5 : 1,
-      transition: "opacity .3s ease",
-      "&:hover": {
-        opacity: 1,
-      },
-    })}
-    {...props}
-  />
+const getLineHeights = (size: any, theme: Theme) => {
+  switch (size) {
+    case 4:
+      return theme.lineHeights[2];
+    case 0:
+      return theme.lineHeights[0];
+    default:
+      return theme.lineHeights[1];
+  }
+};
+
+const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
+  props => ({
+    marginBottom: get(["spaces", props.fontSize], props.theme),
+    lineHeight: getLineHeights(props.fontSize, props.theme),
+  }),
+  layoutSet,
+  opacity,
+  spaceSet,
+  transition,
+  transformSet,
+  textSet,
 );
+
+Text.defaultProps = {
+  fontSize: 0,
+  fontFamily: "main",
+};
+
+Text.displayName = "Text";
 
 export default Text;
