@@ -1,8 +1,8 @@
 import * as React from "react";
-import styled from "lib/styled";
+import styled from "../lib/styled";
 import { spaceSet, SpaceSetProps, fontSize, FontSizeProps } from "onno-react";
-import Text from "components/Text";
-import Box from "components/Box";
+import Text from "./Text";
+import Box from "./Box";
 
 type TextInputProps = SpaceSetProps &
   FontSizeProps &

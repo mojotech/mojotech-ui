@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "lib/styled";
-import Text, { TextProps } from "components/Text";
+import styled from "../lib/styled";
+import Text, { TextProps } from "./Text";
 
 export interface TextLinkProps extends TextProps {
   scheme?: "dark" | "light";

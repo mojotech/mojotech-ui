@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { css, jsx, Global } from "@emotion/core";
 
-import { GT_AMERICA, MOJO_ALTIS } from "lib/font-data";
-import t from "lib/theme";
+import { GT_AMERICA, MOJO_ALTIS } from "../lib/font-data";
+import t from "../lib/theme";
 
 export default () => {
   return (

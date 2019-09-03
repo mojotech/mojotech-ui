@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "lib/styled";
-import Grid, { GridProps } from "components/Grid";
+import styled from "../lib/styled";
+import Grid, { GridProps } from "./Grid";
 
 const AutoGrid: React.FC<GridProps> = styled(Grid)();
 

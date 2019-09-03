@@ -9,12 +9,6 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDirs": ["src", "stories"],
-    "baseUrl": "./",
-    "paths": {
-      "*": [
-        "src/*"
-      ]
-    },
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -27,10 +21,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "plugins": [
-    { "transform": "transformer-module" },
-    { "transform": "ts-transformer-imports" }
-  ],
   "include": ["src/**/*", "stories/**/*"],
   "exclude": ["node_modules", "build", "scripts"]
 }

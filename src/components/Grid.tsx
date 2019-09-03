@@ -1,7 +1,7 @@
 import * as React from "react";
-import styled from "lib/styled";
+import styled from "../lib/styled";
 import { gridParentSet, GridParentSetProps } from "onno-react";
-import Box, { BoxProps } from "components/Box";
+import Box, { BoxProps } from "./Box";
 
 export type GridProps = GridParentSetProps & BoxProps;
 
