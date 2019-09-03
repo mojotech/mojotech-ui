@@ -21,7 +21,7 @@ import { ThemeDecorator, Section, Text } from '@mojotech/mojo-ui'
 const Page: React.FunctionComponent = () => (
   <ThemeDecorator>
     <Section>
-      <Text as="h1" size={6}>Build Better.</Text>
+      <Text as="h1" fontSize={5}>Build Better.</Text>
     </Section>
   </ThemeDecorator>
 )
