@@ -17,8 +17,8 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
+    react: "react",
+    "react-dom": "reactDOM",
   },
   output: {
     filename: "bundle.js",
