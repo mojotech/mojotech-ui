@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "lib/styled";
+import styled from "../lib/styled";
 import {
   textSet,
   TextSetProps,
@@ -15,8 +15,8 @@ import {
   TransitionProps,
   get,
 } from "onno-react";
-import { Theme } from "types/global";
-import { polymorph, PolymorphProps } from "lib/polymorph";
+import { Theme } from "../types/global";
+import { polymorph, PolymorphProps } from "../lib/polymorph";
 
 export type TextProps = TextSetProps &
   SpaceSetProps &

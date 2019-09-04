@@ -19,8 +19,8 @@ import {
   propTypes,
 } from "onno-react";
 
-import styled from "lib/styled";
-import { polymorph, PolymorphProps } from "lib/polymorph";
+import styled from "../lib/styled";
+import { polymorph, PolymorphProps } from "../lib/polymorph";
 
 export type BoxProps = BackgroundSetProps &
   BorderSetProps &

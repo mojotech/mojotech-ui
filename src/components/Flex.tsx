@@ -1,7 +1,7 @@
 import * as React from "react";
-import styled from "lib/styled";
+import styled from "../lib/styled";
 import { flexParentSet, FlexParentSetProps } from "onno-react";
-import Box, { BoxProps } from "components/Box";
+import Box, { BoxProps } from "./Box";
 
 export type FlexProps = FlexParentSetProps & BoxProps;
 

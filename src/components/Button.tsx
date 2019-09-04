@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import * as React from "react";
-import styled from "lib/styled";
-import Box, { BoxProps } from "components/Box";
+import styled from "../lib/styled";
+import Box, { BoxProps } from "./Box";
 import { textSet, TextSetProps } from "onno-react";
 
 type ButtonProps = BoxProps & TextSetProps;
