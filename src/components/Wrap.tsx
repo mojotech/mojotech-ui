@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "lib/styled";
-import Box, { BoxProps } from "components/Box";
+import styled from "../lib/styled";
+import Box, { BoxProps } from "./Box";
 
 const Wrap: React.FC<BoxProps> = styled(Box)();
 
