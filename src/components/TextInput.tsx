@@ -19,6 +19,7 @@ const StyledTextInput: React.FC<Props> = styled.input<Props>(
   spaceSet,
   fontSize,
   props => ({
+    background: "none",
     border: "none",
     borderBottom: `1px solid ${props.theme.colors.dark}30`,
     width: "100%",
