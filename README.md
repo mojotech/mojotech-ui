@@ -2,14 +2,14 @@
 A set of styled React components for MojoTech.com user interfaces.
 
 ## Usage
-Mojo-UI is available as an npm module
+Mojo-UI is available as an npm module. Install the ui lib and peer dependencies
 
 ```sh
 # with yarn
-yarn add @mojotech/mojo-ui
+yarn add @mojotech/mojo-ui @emotion/core @emotion/styled emotion-theming onno-react
 
 # with npm
-npm install @mojotech/mojo-ui
+npm install @mojotech/mojo-ui @emotion/core @emotion/styled emotion-theming onno-react
 ```
 When using make sure to wrap all the components in the `<ThemeDecorator />` component. This component provides the theme styles for the components, as well as adds MojoTech fonts and CSS reset.
 
