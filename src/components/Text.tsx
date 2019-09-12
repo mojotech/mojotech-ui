@@ -17,6 +17,7 @@ import {
 } from "onno-react";
 import { Theme } from "../types/global";
 import { polymorph, PolymorphProps } from "../lib/polymorph";
+import { cursorSet, CursorSetProps } from "../lib/renderers";
 
 export type TextProps = TextSetProps &
   SpaceSetProps &
@@ -25,6 +26,7 @@ export type TextProps = TextSetProps &
   TransformSetProps &
   TransitionProps &
   PolymorphProps &
+  CursorSetProps &
   JSX.IntrinsicClassAttributes<{}> &
   React.HTMLAttributes<HTMLElement>;
 
@@ -52,6 +54,7 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
   transition,
   transformSet,
   textSet,
+  cursorSet,
 );
 
 Text.defaultProps = {
