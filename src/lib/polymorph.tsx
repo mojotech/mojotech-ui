@@ -13,6 +13,7 @@ import {
   textSet,
   transformSet,
 } from "onno-react";
+import { cursorSet } from "./renderers";
 
 export interface PolymorphProps {
   as?: React.ElementType;
@@ -24,6 +25,7 @@ const omitProps = omit({
     ...backgroundSet.options.propsKeys,
     ...borderSet.options.propsKeys,
     ...colorSet.options.propsKeys,
+    ...cursorSet.options.propsKeys,
     ...displaySet.options.propsKeys,
     ...flexSet.options.propsKeys,
     ...gridSet.options.propsKeys,
@@ -43,4 +45,3 @@ export function polymorph<P extends unknown>(
     return <Element {...omitProps(props)} />;
   };
 }
-
