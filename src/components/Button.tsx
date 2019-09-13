@@ -4,7 +4,9 @@ import styled from "../lib/styled";
 import Box, { BoxProps } from "./Box";
 import { textSet, TextSetProps } from "onno-react";
 
-type ButtonProps = BoxProps & TextSetProps;
+type ButtonProps = BoxProps &
+  TextSetProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface Props extends ButtonProps {}
 
