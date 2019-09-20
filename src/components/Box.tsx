@@ -4,6 +4,8 @@ import {
   BackgroundSetProps,
   borderSet,
   BorderSetProps,
+  colorSet,
+  ColorSetProps,
   displaySet,
   DisplaySetProps,
   flexChildSet,
@@ -24,6 +26,7 @@ import { polymorph, PolymorphProps } from "../lib/polymorph";
 
 export type BoxProps = BackgroundSetProps &
   BorderSetProps &
+  ColorSetProps &
   SpaceSetProps &
   DisplaySetProps &
   FlexChildSetProps &
@@ -37,6 +40,7 @@ export type BoxProps = BackgroundSetProps &
 const Box = styled(polymorph<BoxProps>("div"))<BoxProps>(
   backgroundSet,
   borderSet,
+  colorSet,
   displaySet,
   flexChildSet,
   gridChildSet,
