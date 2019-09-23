@@ -5,7 +5,6 @@ import Box, { BoxProps } from "./Box";
 const Wrap: React.FC<BoxProps> = styled(Box)();
 
 Wrap.defaultProps = {
-  height: "100%",
   marginX: "auto",
   maxWidth: [0, 2, 1],
   paddingX: 3,
