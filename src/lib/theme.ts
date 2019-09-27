@@ -4,6 +4,7 @@ export default {
     white: "#ffffff",
     dark: "#14111D",
     gray: "#F0F0F0",
+    yellow: "#E2A210",
   },
   schemes: {
     dark: { backgroundColor: "#14111D", color: "#ffffff" },
