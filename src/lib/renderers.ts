@@ -46,3 +46,19 @@ export const cursorSet = style({
   propsKeys: ["cursor"],
   styleKeys: ["cursor"],
 });
+
+export type ObjectFitProperty =
+  | "fill"
+  | "contain"
+  | "cover"
+  | "none"
+  | "scale-down";
+
+export type ObjectFitSetProps = {
+  objectFit?: ObjectFitProperty;
+};
+
+export const objectFitSet = style({
+  propsKeys: ["objectFit"],
+  styleKeys: ["objectFit"],
+});
