@@ -5,6 +5,7 @@ export type Theme = {
     white: string;
     dark: string;
     gray: string;
+    yellow: string;
   };
   schemes: {
     dark: {
