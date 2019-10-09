@@ -2,6 +2,7 @@ export type Theme = {
   spaces: string[];
   colors: {
     mojogreen: string;
+    darkgreen: string;
     white: string;
     dark: string;
     gray: string;

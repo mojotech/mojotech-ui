@@ -1,6 +1,7 @@
 export default {
   colors: {
     mojogreen: "#00ba40",
+    darkgreen: "#1E4D32",
     white: "#ffffff",
     dark: "#14111D",
     gray: "#F0F0F0",
