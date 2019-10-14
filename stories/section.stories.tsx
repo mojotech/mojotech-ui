@@ -9,7 +9,7 @@ import Text from "../src/components/Text";
 storiesOf("Section", module).add("Sections", () => (
   <React.Fragment>
     <Section>
-      <Wrap size={2}>
+      <Wrap>
         <Text fontSize={3} as="h2">
           The principles that guide us.
         </Text>
@@ -60,7 +60,7 @@ storiesOf("Section", module).add("Sections", () => (
       </Wrap>
     </Section>
     <Section>
-      <Wrap size={2}>
+      <Wrap>
         <Text fontSize={3} as="h2">
           The principles that guide us.
         </Text>
