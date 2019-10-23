@@ -51,10 +51,8 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
 
 TextLink.defaultProps = {
   as: "a",
-  color: "inherit",
   cursor: "pointer",
   scheme: "light",
-  textDecoration: "none",
   underline: false,
   ...Text.defaultProps,
 };
