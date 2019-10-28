@@ -28,6 +28,7 @@ export type Theme = {
   lineHeights: number[];
   opacities: number[];
   breakpoints: number[];
+  easings: { easeOut: string; easeInOut: string };
 };
 
 export type TextTags =
