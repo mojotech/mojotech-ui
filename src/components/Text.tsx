@@ -58,8 +58,10 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
 );
 
 Text.defaultProps = {
+  color: "inherit",
   fontSize: 0,
   fontFamily: "main",
+  textDecoration: "none",
 };
 
 Text.displayName = "Text";
