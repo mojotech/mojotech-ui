@@ -56,8 +56,8 @@ const Button: React.FC<Props> = styled(Box)(
 
 Button.defaultProps = {
   as: "button",
-  paddingX: 4,
-  paddingY: 2,
+  paddingX: 5,
+  paddingY: 3,
   fontSize: 2,
 };
 
