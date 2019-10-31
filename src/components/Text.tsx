@@ -34,8 +34,10 @@ interface Props extends TextProps {}
 
 const getLineHeights = (size: any, theme: Theme) => {
   switch (size) {
-    case 4:
+    case 5:
       return theme.lineHeights[2];
+    case 4:
+      return theme.lineHeights[1];
     case 0:
       return theme.lineHeights[0];
     default:
@@ -58,8 +60,10 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
 );
 
 Text.defaultProps = {
+  color: "inherit",
   fontSize: 0,
   fontFamily: "main",
+  textDecoration: "none",
 };
 
 Text.displayName = "Text";

@@ -28,7 +28,7 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
           position: "absolute",
           height: 1,
           left: 0,
-          transition: "transform .3s ease",
+          transition: `transform .3s ${props.theme.easings.easeOut}`,
           transform: "scaleX(0)",
           transformOrigin: "100% 50%",
           width: "100%",
@@ -42,7 +42,7 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
       }
     : {
         opacity: props.theme.opacities[0],
-        transition: "opacity .3s ease",
+        transition: `opacity .3s ${props.theme.easings.easeInOut}`,
         "&:hover": {
           opacity: props.theme.opacities[1],
         },
@@ -51,10 +51,8 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
 
 TextLink.defaultProps = {
   as: "a",
-  color: "inherit",
   cursor: "pointer",
   scheme: "light",
-  textDecoration: "none",
   underline: false,
   ...Text.defaultProps,
 };
