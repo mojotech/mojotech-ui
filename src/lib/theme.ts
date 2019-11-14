@@ -5,6 +5,8 @@ export default {
     white: "#ffffff",
     dark: "#14111D",
     gray: "#F0F0F0",
+    mediumGray: "#ACACAC",
+    darkGray: "#5B5B5B",
     yellow: "#E2A210",
   },
   schemes: {
