@@ -15,8 +15,8 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
     ? {
         boxShadow:
           props.scheme === "dark"
-            ? `0px 1px 0 ${props.theme.colors.white}30`
-            : `0px 1px 0 ${props.theme.colors.dark}30`,
+            ? `0px 1px 0 ${props.theme.colors.darkGray}`
+            : `0px 1px 0 ${props.theme.colors.mediumGray}`,
         position: "relative",
         "&:after": {
           background:
