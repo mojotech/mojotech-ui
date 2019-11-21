@@ -1,4 +1,6 @@
-export default {
+import { ZStack } from "../types/global";
+
+const theme = {
   colors: {
     mojogreen: "#00ba40",
     meangreen: "#1E4D32",
@@ -43,4 +45,28 @@ export default {
     easeOut: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     easeInOut: "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
   },
+  zIndices: [
+    -1,   // 0-Sink
+    100,  // 1-SourceOrder + 1
+    200,  // 2-SourceOrder + 2
+    400,  // 3-SourceOrder + 3
+    800,  // 4-Overlay
+    900,  // 5-OverlayControls
+    1000, // 6-Modal
+    2000, // 7-ModalControls
+    4000, // 8-Alert/Toast
+    8000, // 9-AlertControls
+  ]
+};
+
+export default theme;
+
+export const zStack: ZStack = {
+  sink: theme.zIndices[0],
+  overlay: theme.zIndices[4],
+  overlayControl: theme.zIndices[5],
+  modal: theme.zIndices[6],
+  modalBg: theme.zIndices[7],
+  alert: theme.zIndices[8],
+  alertControls: theme.zIndices[9],
 };
