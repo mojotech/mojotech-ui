@@ -31,7 +31,18 @@ export type Theme = {
   opacities: number[];
   breakpoints: number[];
   easings: { easeOut: string; easeInOut: string };
+  zIndices: number[];
 };
+
+export type ZStack = {
+  sink: number,
+  overlay: number,
+  overlayControl: number,
+  modal: number,
+  modalBg: number,
+  alert: number,
+  alertControls: number,
+}
 
 export type TextTags =
   | "p"
