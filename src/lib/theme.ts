@@ -37,7 +37,7 @@ const theme = {
     "calc(28px + (48 - 28) * ((100vw - 400px) / (1800 - 400)))", //4-H1
     "calc(29px + (50 - 29) * ((100vw - 400px) / (1800 - 400)))", //5-Display
   ],
-  lineHeights: [1.8, 1.7, 1.3],
+  lineHeights: [1.8, 1.7, 1.5, 1.3],
   opacities: [0.5, 1],
   maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
   breakpoints: [0, 600, 1600],
