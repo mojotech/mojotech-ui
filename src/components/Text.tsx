@@ -13,11 +13,12 @@ import {
   TransformSetProps,
   transition,
   TransitionProps,
-  get,
+  isArray,
 } from "onno-react";
 import { Theme } from "../types/global";
 import { polymorph, PolymorphProps } from "../lib/polymorph";
 import { cursorSet, CursorSetProps } from "../lib/renderers";
+import { mq } from "../lib/utils";
 
 export type TextProps = TextSetProps &
   SpaceSetProps &
@@ -45,11 +46,20 @@ const getLineHeights = (size: any, theme: Theme) => {
   }
 };
 
+const getMarginBottom = (size: any, theme: Theme) => {
+  if (isArray(size)) {
+    return [theme.spaces[size[0]], theme.spaces[size[1]]];
+  }
+
+  return theme.spaces[size];
+};
+
 const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
-  props => ({
-    marginBottom: get(["spaces", props.fontSize], props.theme),
-    lineHeight: getLineHeights(props.fontSize, props.theme),
-  }),
+  props =>
+    mq({
+      lineHeight: getLineHeights(props.fontSize, props.theme),
+      marginBottom: getMarginBottom(props.fontSize, props.theme),
+    }),
   layoutSet,
   opacity,
   spaceSet,
