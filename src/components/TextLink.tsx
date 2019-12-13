@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "../lib/styled";
 import Text, { TextProps } from "./Text";
+import { rgbaify } from "../lib/utils";
 
 export type TextLinkProps = TextProps &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -15,29 +16,20 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
     ? {
         boxShadow:
           props.scheme === "dark"
-            ? `0px 1px 0 ${props.theme.colors.darkGray}`
-            : `0px 1px 0 ${props.theme.colors.mediumGray}`,
+            ? `inset 0 -1px 0 0 ${rgbaify(props.theme.colors.white, 0.4)}`
+            : `inset 0 -1px 0 0 ${rgbaify(props.theme.colors.dark, 0.4)}`,
+        backgroundImage:
+          props.scheme === "dark"
+            ? `linear-gradient(${props.theme.colors.white}, ${props.theme.colors.white})`
+            : `linear-gradient(${props.theme.colors.dark}, ${props.theme.colors.dark})`,
+        backgroundPosition: "100% 100%",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "0% 1px",
         position: "relative",
-        "&:after": {
-          background:
-            props.scheme === "dark"
-              ? props.theme.colors.white
-              : props.theme.colors.dark,
-          bottom: -1,
-          content: "''",
-          position: "absolute",
-          height: 1,
-          left: 0,
-          transition: `transform .3s ${props.theme.easings.easeOut}`,
-          transform: "scaleX(0)",
-          transformOrigin: "100% 50%",
-          width: "100%",
-        },
-        "&:hover": {
-          "&:after": {
-            transform: "scaleX(1)",
-            transformOrigin: "0 50%",
-          },
+        transition: `background-size .3s ${props.theme.easings.easeInOut}`,
+        "&:hover, &:focus": {
+          backgroundSize: "100% 1px",
+          backgroundPosition: "0% 100%",
         },
       }
     : {
