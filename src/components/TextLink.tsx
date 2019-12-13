@@ -35,7 +35,7 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
     : {
         opacity: props.theme.opacities[0],
         transition: `opacity .3s ${props.theme.easings.easeInOut}`,
-        "&:hover": {
+        "&:hover, &:focus": {
           opacity: props.theme.opacities[1],
         },
       },
