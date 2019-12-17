@@ -46,17 +46,17 @@ const theme = {
     easeInOut: "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
   },
   zIndices: [
-    -1,   // 0-Sink
-    100,  // 1-SourceOrder + 1
-    200,  // 2-SourceOrder + 2
-    400,  // 3-SourceOrder + 3
-    800,  // 4-Overlay
-    900,  // 5-OverlayControls
+    -1, // 0-Sink
+    100, // 1-SourceOrder + 1
+    200, // 2-SourceOrder + 2
+    400, // 3-SourceOrder + 3
+    800, // 4-Overlay
+    900, // 5-OverlayControls
     1000, // 6-Modal
     2000, // 7-ModalControls
     4000, // 8-Alert/Toast
     8000, // 9-AlertControls
-  ]
+  ],
 };
 
 export default theme;
@@ -67,6 +67,6 @@ export const zStack: ZStack = {
   overlayControl: theme.zIndices[5],
   modal: theme.zIndices[6],
   modalBg: theme.zIndices[7],
-  alert: theme.zIndices[8],
-  alertControls: theme.zIndices[9],
+  toast: theme.zIndices[8],
+  toastControls: theme.zIndices[9],
 };

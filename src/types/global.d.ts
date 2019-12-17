@@ -35,14 +35,14 @@ export type Theme = {
 };
 
 export type ZStack = {
-  sink: number,
-  overlay: number,
-  overlayControl: number,
-  modal: number,
-  modalBg: number,
-  alert: number,
-  alertControls: number,
-}
+  sink: number;
+  overlay: number;
+  overlayControl: number;
+  modal: number;
+  modalBg: number;
+  toast: number;
+  toastControls: number;
+};
 
 export type TextTags =
   | "p"
