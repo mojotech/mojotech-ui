@@ -22,6 +22,7 @@ export interface PolymorphProps {
 const omitProps = omit({
   propsKeys: [
     "as",
+    "scheme",
     "underline",
     ...backgroundSet.options.propsKeys,
     ...borderSet.options.propsKeys,
