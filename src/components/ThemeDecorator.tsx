@@ -5,7 +5,7 @@ import Font from "./Font";
 import t from "../lib/theme";
 
 const ThemeDecorator = ({ ...props }) => (
-  <ThemeProvider theme={t}>
+  <ThemeProvider theme={props.theme}>
     <Reset />
     <Font />
     {props.children}
@@ -13,5 +13,9 @@ const ThemeDecorator = ({ ...props }) => (
 );
 
 ThemeDecorator.displayName = "ThemeDecorator";
+
+ThemeDecorator.defaultProps = {
+  theme: t,
+};
 
 export default ThemeDecorator;
