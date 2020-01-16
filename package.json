@@ -44,7 +44,7 @@
     "babel-loader": "^8.0.6",
     "bable-loader": "0.0.1-security",
     "emotion-theming": "^10.0.14",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "onno-react": "^1.0.0",
     "react": "^16.8.6",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
@@ -52,7 +52,7 @@
     "ts-jest": "^24.0.2",
     "ttypescript": "^1.5.7",
     "typescript": "^3.5.3",
-    "webpack": "^4.39.1",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
