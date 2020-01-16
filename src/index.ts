@@ -1,4 +1,5 @@
 export { default as BaseTheme } from "./lib/theme";
+export { Theme as MojoTheme } from "./types/global";
 export { zStack } from "./lib/theme";
 export { default as Button } from "./components/Button";
 export { default as Text } from "./components/Text";
