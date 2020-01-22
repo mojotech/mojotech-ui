@@ -20,7 +20,7 @@ const Button: React.FC<Props> = styled(Box)(
     overflow: "hidden",
     position: "relative",
     zIndex: 1,
-    "&:hover": {
+    "&:hover, &:focus": {
       "&:before": {
         transform: "translateX(0)",
       },
