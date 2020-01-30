@@ -20,8 +20,12 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
             : `inset 0 -1px 0 0 ${rgbaify(props.theme.colors.dark, 0.4)}`,
         backgroundImage:
           props.scheme === "dark"
-            ? `linear-gradient(${props.theme.colors.white}, ${props.theme.colors.white})`
-            : `linear-gradient(${props.theme.colors.dark}, ${props.theme.colors.dark})`,
+            ? `linear-gradient(${props.theme.colors.white}, ${
+                props.theme.colors.white
+              })`
+            : `linear-gradient(${props.theme.colors.dark}, ${
+                props.theme.colors.dark
+              })`,
         backgroundPosition: "100% 100%",
         backgroundRepeat: "no-repeat",
         backgroundSize: "0% 1px",
