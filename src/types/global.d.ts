@@ -24,7 +24,7 @@ export type Theme = {
       color: string;
     };
   };
-  fontFamilies: { main: string; display: string };
+  fontFamilies: { main: string; display: string; mono: string };
   maxWidths: string[];
   fontSizes: string[];
   lineHeights: number[];
