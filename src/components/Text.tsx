@@ -29,6 +29,7 @@ export type TextProps = TextSetProps &
   PolymorphProps &
   CursorSetProps &
   JSX.IntrinsicClassAttributes<{}> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.HTMLAttributes<HTMLElement>;
 
 interface Props extends TextProps {}
