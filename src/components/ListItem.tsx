@@ -3,11 +3,17 @@ import styled from "../lib/styled";
 import theme from "../lib/theme";
 import Text, { TextProps } from "./Text";
 
-const { colors } = theme;
+const { colors, spaces } = theme;
 
 const ListItem: React.FC<TextProps> = styled(Text)({
+  listStylePosition: "outside",
+  position: "relative",
+  paddingLeft: spaces[3],
   "&:before": {
-    content: "'·   '",
+    content: "'·'",
+    position: "absolute",
+    top: 0,
+    left: 0,
     color: colors.mediumGray,
   },
 });
