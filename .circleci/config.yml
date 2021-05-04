@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
   working_directory: /tmp/mojotech-ui
   docker:
-    - image: circleci/node:8.11
+    - image: circleci/node:14.16
 
 jobs:
   build:
