@@ -18,5 +18,18 @@ export const {
       5: 'clamp(5.50rem, 3.35rem + 10.73vw, 11.00rem)', // 88-176
       6: 'clamp(11.00rem, 6.71rem + 21.46vw, 22.00rem)', // 176-352
     },
+    fontSizes: {
+      1: 'clamp(1.00rem, 0.95rem + 0.24vw, 1.13rem)', // 16-18
+      2: 'clamp(1.00rem, 0.80rem + 0.98vw, 1.50rem)', // 16-24
+      3: 'clamp(1.25rem, 1.15rem + 0.49vw, 1.50rem)', // 20-24
+      4: 'clamp(1.50rem, 1.30rem + 0.98vw, 2.00rem)', // 24-32
+      5: 'clamp(1.75rem, 1.26rem + 2.44vw, 3.00rem)', // 28-48
+      6: 'clamp(1.88rem, 1.14rem + 3.66vw, 3.75rem)', // 30-60
+    },
+    fonts: {
+      main: `'GT America Light', system-ui, sans-serif`,
+      display: `'altis-mojoregular', system-ui, sans-serif`,
+      mono: `'GT America Mono', monospace`,
+    },
   },
 });
