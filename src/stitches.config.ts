@@ -31,5 +31,11 @@ export const {
       display: `'altis-mojoregular', system-ui, sans-serif`,
       mono: `'GT America Mono', monospace`,
     },
+    lineHeights: {
+      1: 1.8,
+      2: 1.7,
+      3: 1.5,
+      4: 1.3,
+    },
   },
 });
