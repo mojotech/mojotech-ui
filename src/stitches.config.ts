@@ -37,5 +37,42 @@ export const {
       3: 1.5,
       4: 1.3,
     },
+    sizes: {
+      1: '100%',
+      2: '55vw',
+      3: '66.666vw',
+      4: '90vw',
+      5: '100vw',
+    },
+  },
+  utils: {
+    marginX: (config) => (
+      value: `$${keyof typeof config['theme']['space'] | (string & {})}`
+    ) => ({
+      marginLeft: value,
+      marginRight: value,
+    }),
+    marginY: (config) => (
+      value: `$${keyof typeof config['theme']['space'] | (string & {})}`
+    ) => ({
+      marginTop: value,
+      marginBottom: value,
+    }),
+    paddingX: (config) => (
+      value: `$${keyof typeof config['theme']['space'] | (string & {})}`
+    ) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    paddingY: (config) => (
+      value: `$${keyof typeof config['theme']['space'] | (string & {})}`
+    ) => ({
+      paddingTop: value,
+      paddingBottom: value,
+    }),
+  },
+  media: {
+    bp1: '(min-width: 600px)',
+    bp2: '(min-width: 1600px)',
   },
 });
