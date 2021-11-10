@@ -42,11 +42,11 @@ const getLineHeights = (size: any, theme: Theme) => {
       case 4:
         return theme.lineHeights[2];
       case 3:
-        return theme.lineHeights[2];
-      case 0:
-        return theme.lineHeights[0];
-      default:
         return theme.lineHeights[1];
+      case 0:
+        return theme.lineHeights[1];
+      default:
+        return theme.lineHeights[0];
     }
   };
 
@@ -65,11 +65,27 @@ const getMarginBottom = (size: any, theme: Theme) => {
   return theme.spaces[size];
 };
 
+const getTracking = (size: any, theme: Theme) => {
+  const getValue = (fs: any) => {
+    switch (fs) {
+      case 5:
+        return theme.letterSpacing[1];
+      case 4:
+        return theme.letterSpacing[2];
+      default:
+        return theme.letterSpacing[0];
+    }
+  };
+
+  return getValue(size);
+};
+
 const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
   props =>
     mq({
       lineHeight: getLineHeights(props.fontSize, props.theme),
       marginBottom: getMarginBottom(props.fontSize, props.theme),
+      letterSpacing: getTracking(props.fontSize, props.theme),
     }),
   layoutSet,
   opacity,

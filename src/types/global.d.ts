@@ -28,6 +28,7 @@ export type Theme = {
   maxWidths: string[];
   fontSizes: string[];
   lineHeights: number[];
+  letterSpacing: string[];
   opacities: number[];
   breakpoints: number[];
   easings: { easeOut: string; easeInOut: string };
