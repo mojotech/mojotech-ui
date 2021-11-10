@@ -40,8 +40,9 @@ const theme = {
   ],
   lineHeights: [1.8, 1.7, 1.5, 1.3],
   opacities: [0.5, 1],
-  maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
-  breakpoints: [0, 600, 1600],
+  maxWidths: ["100%", "800px", "1400px"],
+  widths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
+  breakpoints: [0, 800, 1600],
   easings: {
     easeOut: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     easeInOut: "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
