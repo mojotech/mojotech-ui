@@ -6,9 +6,9 @@ const Wrap: React.FC<BoxProps> = styled(Box)();
 
 Wrap.defaultProps = {
   marginX: "auto",
-  maxWidth: [0, 2, 1],
+  maxWidth: [0, 1],
+  width: [0, 2],
   paddingX: 3,
-  width: "100%",
 };
 
 Wrap.displayName = "Wrap";
