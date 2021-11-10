@@ -27,6 +27,7 @@ const theme = {
   ],
   fontFamilies: {
     main: `'GT America Light', system-ui, sans-serif`,
+    regular: `'GT America Regular', system-ui, sans-serif`,
     display: `'altis-mojoregular', system-ui, sans-serif`,
     mono: `'GT America Mono', monospace`,
   },
