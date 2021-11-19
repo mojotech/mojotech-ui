@@ -27,18 +27,20 @@ const theme = {
   ],
   fontFamilies: {
     main: `'GT America Light', system-ui, sans-serif`,
+    regular: `'GT America Regular', system-ui, sans-serif`,
     display: `'altis-mojoregular', system-ui, sans-serif`,
     mono: `'GT America Mono', monospace`,
   },
   fontSizes: [
-    "calc(16px + (18 - 16) * ((100vw - 400px) / (1800 - 400)))", //0-BodySmall
-    "calc(16px + (24 - 16) * ((100vw - 400px) / (1800 - 400)))", //1-Body
-    "calc(20px + (24 - 20) * ((100vw - 400px) / (1800 - 400)))", //2-H3
-    "calc(24px + (32 - 24) * ((100vw - 400px) / (1800 - 400)))", //3-H2
-    "calc(28px + (48 - 28) * ((100vw - 400px) / (1800 - 400)))", //4-H1
-    "calc(29px + (50 - 29) * ((100vw - 400px) / (1800 - 400)))", //5-Display
+    "clamp(0.89rem, 0.91rem + -0.07vw, 0.84rem)", //0-BodySmall
+    "clamp(1.00rem, 0.95rem + 0.20vw, 1.13rem)", //1-Body
+    "clamp(1.13rem, 0.98rem + 0.60vw, 1.50rem)", //2-H3
+    "clamp(1.27rem, 0.97rem + 1.17vw, 2.00rem)", //3-H2
+    "clamp(1.42rem, 0.93rem + 1.99vw, 2.66rem)", //4-H1
+    "clamp(1.60rem, 0.82rem + 3.12vw, 3.55rem)", //5-Display
   ],
-  lineHeights: [1.8, 1.7, 1.5, 1.3],
+  lineHeights: [1.4, 1.3, 1.2, 1.1],
+  letterSpacing: ["0em", "-0.025em", "-0.015em"],
   opacities: [0.5, 1],
   maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
   breakpoints: [0, 600, 1600],
