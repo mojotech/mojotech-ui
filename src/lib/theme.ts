@@ -43,7 +43,7 @@ const theme = {
   letterSpacing: ["0em", "-0.025em", "-0.015em"],
   opacities: [0.6, 1],
   maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
-  breakpoints: [0, 600, 1600],
+  breakpoints: [0, 800, 1600],
   easings: {
     easeOut: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     easeInOut: "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
