@@ -41,7 +41,7 @@ const theme = {
   ],
   lineHeights: [1.4, 1.3, 1.2, 1.1],
   letterSpacing: ["0em", "-0.025em", "-0.015em"],
-  opacities: [0.5, 1],
+  opacities: [0.6, 1],
   maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
   breakpoints: [0, 600, 1600],
   easings: {
