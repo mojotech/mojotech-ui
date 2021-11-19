@@ -81,7 +81,7 @@ const getTracking = (size: any, theme: Theme) => {
 };
 
 const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
-  props =>
+  (props) =>
     mq({
       lineHeight: getLineHeights(props.fontSize, props.theme),
       marginBottom: getMarginBottom(props.fontSize, props.theme),
