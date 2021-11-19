@@ -26,8 +26,10 @@ export type Theme = {
   };
   fontFamilies: { main: string; display: string; mono: string };
   maxWidths: string[];
+  widths: string[];
   fontSizes: string[];
   lineHeights: number[];
+  letterSpacing: string[];
   opacities: number[];
   breakpoints: number[];
   easings: { easeOut: string; easeInOut: string };
