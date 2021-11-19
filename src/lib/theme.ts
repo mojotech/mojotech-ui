@@ -42,7 +42,8 @@ const theme = {
   lineHeights: [1.4, 1.3, 1.2, 1.1],
   letterSpacing: ["0em", "-0.025em", "-0.015em"],
   opacities: [0.6, 1],
-  maxWidths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
+  maxWidths: ["100%", "800px", "1600px"],
+  widths: ["100%", "55vw", "66.666vw", "90vw", "100vw"],
   breakpoints: [0, 800, 1600],
   easings: {
     easeOut: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
