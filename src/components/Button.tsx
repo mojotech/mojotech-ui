@@ -8,11 +8,16 @@ type ButtonProps = BoxProps &
   TextSetProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-interface Props extends ButtonProps {}
+interface Props extends ButtonProps {
+  scheme?: "dark" | "light";
+}
 
 const Button: React.FC<Props> = styled(Box)(
+  (props: Props) => ({
+    backgroundColor: props.scheme === "light" ? "#14111D" : "white",
+    color: props.scheme === "light" ? "white" : "#14111D",
+  }),
   {
-    backgroundColor: "white",
     display: "block",
     border: "none",
     cursor: "pointer",
@@ -20,7 +25,9 @@ const Button: React.FC<Props> = styled(Box)(
     overflow: "hidden",
     position: "relative",
     zIndex: 1,
+    transition: "filter 0.5s ease",
     "&:hover, &:focus": {
+      filter: "brightness(120%)",
       "&:before": {
         transform: "translateX(0)",
       },
@@ -59,6 +66,7 @@ Button.defaultProps = {
   paddingX: 5,
   paddingY: 3,
   fontSize: 2,
+  scheme: "dark",
 };
 
 Button.displayName = "Button";
