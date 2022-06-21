@@ -6,8 +6,8 @@ const AutoGrid: React.FC<GridProps> = styled(Grid)();
 
 AutoGrid.defaultProps = {
   ...Grid.defaultProps,
-  gridGap: 1,
-  gridTemplateColumns: ["repeat(1, 1fr)", "repeat(5, 1fr)"],
+  gridGap: [24, 48],
+  gridTemplateColumns: ["repeat(1, 1fr)", "repeat(2, 1fr)"],
   gridAutoRows: "min-content",
   gridAutoFlow: "row",
 };
