@@ -22,3 +22,4 @@ export { default as Grid } from "./components/Grid";
 export { default as TextLink } from "./components/TextLink";
 export { default as Image } from "./components/Image";
 export { default as ListItem } from "./components/ListItem";
+export { default as GridSystem } from "./components/GridSystem";
