@@ -9,6 +9,7 @@ export type Theme = {
     mediumGray: string;
     darkGray: string;
     yellow: string;
+    aaMojogreen: string;
   };
   schemes: {
     dark: {

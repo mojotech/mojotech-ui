@@ -10,6 +10,7 @@ const theme = {
     mediumGray: "#ACACAC",
     darkGray: "#5B5B5B",
     yellow: "#E2A210",
+    aaMojogreen: "#00882F"
   },
   schemes: {
     dark: { backgroundColor: "#14111D", color: "#ffffff" },
