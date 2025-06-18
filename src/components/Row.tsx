@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
+import * as React from "react"
 import { Theme } from "../types/global";
 
 const Row: React.FC = props => (
