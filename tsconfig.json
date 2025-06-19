@@ -19,7 +19,5 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  },
-  "include": ["src/**/*", "stories/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  }
 }
