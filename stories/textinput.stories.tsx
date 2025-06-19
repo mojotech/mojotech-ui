@@ -1,4 +1,3 @@
-import * as React from "react";
 import TextInput from "../src/components/TextInput";
 import Box from "../src/components/Box";
 

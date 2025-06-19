@@ -7,14 +7,18 @@ export type FlexProps = FlexParentSetProps & BoxProps;
 
 const Flex: React.FC<FlexProps> = styled(Box)(flexParentSet);
 
-const flexDefaultProps: FlexProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<FlexProps> = {
   display: "flex",
   flexWrap: "wrap",
   flexDirection: "row",
 };
 
-Flex.defaultProps = flexDefaultProps;
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const FlexWithDefaults: React.FC<FlexProps> = (props) => {
+  return <Flex {...defaultProps} {...props} />;
+};
 
-Flex.displayName = "Flex";
+FlexWithDefaults.displayName = "Flex";
 
-export default Flex;
+export default FlexWithDefaults;

@@ -1,4 +1,3 @@
-import * as React from "react";
 import Wrap from "../src/components/Wrap";
 import Row from "../src/components/Row";
 import Column from "../src/components/Column";

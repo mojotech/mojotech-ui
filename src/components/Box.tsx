@@ -42,7 +42,7 @@ export type BoxProps = BackgroundSetProps &
   JSX.IntrinsicClassAttributes<{}> &
   React.HTMLAttributes<HTMLElement>;
 
-const Box = styled(polymorph<BoxProps>("div"))<BoxProps>(
+const Box = styled(polymorph<BoxProps>("div"))(
   backgroundSet,
   borderSet,
   colorSet,

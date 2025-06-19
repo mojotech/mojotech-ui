@@ -3,15 +3,15 @@ import styled from "../lib/styled";
 import Text, { TextProps } from "./Text";
 import { rgbaify } from "../lib/utils";
 
-export type TextLinkProps = TextProps &
-  React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type TextLinkProps = TextProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-interface Props extends TextLinkProps {
+export interface Props extends TextLinkProps {
   scheme?: "dark" | "light";
   underline?: boolean;
+  children?: React.ReactNode;
 }
 
-const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
+const TextLink: React.FC<Props> = styled(Text)<Props>((props) =>
   props.underline
     ? {
         boxShadow:
@@ -45,15 +45,25 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
       },
 );
 
-TextLink.defaultProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<Props> = {
   as: "a",
   opacity: 0,
   cursor: "pointer",
   scheme: "light",
   underline: false,
-  ...Text.defaultProps,
+  // Text component defaults
+  color: "inherit",
+  fontSize: 1,
+  fontFamily: "main",
+  textDecoration: "none",
 };
 
-TextLink.displayName = "TextLink";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const TextLinkWithDefaults: React.FC<Props> = (props) => {
+  return <TextLink {...defaultProps} {...props} />;
+};
 
-export default TextLink;
+TextLinkWithDefaults.displayName = "TextLink";
+
+export default TextLinkWithDefaults;

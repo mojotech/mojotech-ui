@@ -1,6 +1,5 @@
-import React from 'react';
-import { ThemeProvider } from 'emotion-theming';
-import theme from '../src/lib/theme';
+import { ThemeProvider } from "@emotion/react";
+import theme from "../src/lib/theme";
 
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
@@ -14,8 +13,8 @@ const preview = {
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
   },

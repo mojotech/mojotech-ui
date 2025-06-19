@@ -5,13 +5,18 @@ import Box, { BoxProps } from "./Box";
 
 export type GridProps = GridParentSetProps & BoxProps;
 
-const Grid: React.FC<GridProps> = styled(Box)<GridProps>(gridParentSet);
+const Grid: React.FC<GridProps> = styled(Box)(gridParentSet);
 
-Grid.defaultProps = {
-  ...Box.defaultProps,
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<GridProps> = {
   display: "grid",
 };
 
-Grid.displayName = "Grid";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const GridWithDefaults: React.FC<GridProps> = (props) => {
+  return <Grid {...defaultProps} {...props} />;
+};
 
-export default Grid;
+GridWithDefaults.displayName = "Grid";
+
+export default GridWithDefaults;

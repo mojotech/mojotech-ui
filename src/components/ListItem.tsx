@@ -18,11 +18,20 @@ const ListItem: React.FC<TextProps> = styled(Text)({
   },
 });
 
-ListItem.defaultProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<TextProps> = {
   as: "li",
-  ...Text.defaultProps,
+  color: "inherit",
+  fontSize: 1,
+  fontFamily: "main",
+  textDecoration: "none",
 };
 
-ListItem.displayName = "ListItem";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const ListItemWithDefaults: React.FC<TextProps> = (props) => {
+  return <ListItem {...defaultProps} {...props} />;
+};
 
-export default ListItem;
+ListItemWithDefaults.displayName = "ListItem";
+
+export default ListItemWithDefaults;

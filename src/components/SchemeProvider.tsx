@@ -7,8 +7,9 @@ type ColorScheme = "dark" | "light" | "gray";
 
 type SchemeProviderProps = ColorSetProps & BoxProps;
 
-interface Props extends SchemeProviderProps {
+export interface Props extends SchemeProviderProps {
   scheme?: ColorScheme;
+  children?: React.ReactNode;
 }
 
 const schemeSet = variant({
@@ -19,12 +20,16 @@ const schemeSet = variant({
 
 const SchemeProvider: React.FC<Props> = styled(Box)(schemeSet);
 
-const schemeProviderDefaultProps: Props = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<Props> = {
   scheme: "dark",
 };
 
-SchemeProvider.defaultProps = schemeProviderDefaultProps;
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const SchemeProviderWithDefaults: React.FC<Props> = (props) => {
+  return <SchemeProvider {...defaultProps} {...props} />;
+};
 
-SchemeProvider.displayName = "SchemeProvider";
+SchemeProviderWithDefaults.displayName = "SchemeProvider";
 
-export default SchemeProvider;
+export default SchemeProviderWithDefaults;

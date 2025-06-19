@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { css } from "@emotion/react";
 import AutoGrid from "../src/components/AutoGrid";
 
 const styles = css({

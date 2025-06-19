@@ -7,8 +7,9 @@ type ButtonProps = BoxProps &
   TextSetProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-interface Props extends ButtonProps {
+export interface Props extends ButtonProps {
   scheme?: "dark" | "light";
+  children?: React.ReactNode;
 }
 
 const Button: React.FC<Props> = styled(Box)(
@@ -60,7 +61,8 @@ const Button: React.FC<Props> = styled(Box)(
   textSet,
 );
 
-Button.defaultProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<Props> = {
   as: "button",
   paddingX: 5,
   paddingY: 3,
@@ -68,6 +70,11 @@ Button.defaultProps = {
   scheme: "dark",
 };
 
-Button.displayName = "Button";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const ButtonWithDefaults: React.FC<Props> = (props) => {
+  return <Button {...defaultProps} {...props} />;
+};
 
-export default Button;
+ButtonWithDefaults.displayName = "Button";
+
+export default ButtonWithDefaults;

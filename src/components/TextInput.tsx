@@ -8,17 +8,18 @@ type TextInputProps = SpaceSetProps &
   FontSizeProps &
   React.HTMLProps<HTMLInputElement>;
 
-interface Props extends TextInputProps {
+export interface Props extends TextInputProps {
   label?: string;
   name?: string;
   required?: boolean;
   type?: string;
+  children?: React.ReactNode;
 }
 
 const StyledTextInput: React.FC<Props> = styled.input<Props>(
   spaceSet,
   fontSize,
-  props => ({
+  (props) => ({
     background: "none",
     border: "none",
     borderBottom: `1px solid ${props.theme.colors.dark}30`,
@@ -26,7 +27,7 @@ const StyledTextInput: React.FC<Props> = styled.input<Props>(
   }),
 );
 
-export const TextInput: React.FC<Props> = props => {
+export const TextInput: React.FC<Props> = (props) => {
   const [focus, setFocus] = React.useState<boolean>(false);
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,13 +73,19 @@ export const TextInput: React.FC<Props> = props => {
   );
 };
 
-TextInput.defaultProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<Props> = {
   paddingY: 1,
   fontSize: 2,
   label: "label",
   type: "text",
 };
 
-TextInput.displayName = "TextInput";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const TextInputWithDefaults: React.FC<Props> = (props) => {
+  return <TextInput {...defaultProps} {...props} />;
+};
 
-export default TextInput;
+TextInputWithDefaults.displayName = "TextInput";
+
+export default TextInputWithDefaults;
