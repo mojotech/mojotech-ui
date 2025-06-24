@@ -1,3 +1,48 @@
+// Module augmentation for Emotion's theme
+import '@emotion/react';
+
+declare module '@emotion/react' {
+  export interface Theme {
+    spaces: string[];
+    colors: {
+      mojogreen: string;
+      meangreen: string;
+      white: string;
+      dark: string;
+      gray: string;
+      mediumGray: string;
+      darkGray: string;
+      yellow: string;
+      aaMojogreen: string;
+      darkgreen: string;
+    };
+    schemes: {
+      dark: {
+        backgroundColor: string;
+        color: string;
+      };
+      light: {
+        backgroundColor: string;
+        color: string;
+      };
+      gray: {
+        backgroundColor: string;
+        color: string;
+      };
+    };
+    fontFamilies: { main: string; regular: string; display: string; mono: string };
+    maxWidths: string[];
+    widths: string[];
+    fontSizes: string[];
+    lineHeights: number[];
+    letterSpacing: string[];
+    opacities: number[];
+    breakpoints: number[];
+    easings: { easeOut: string; easeInOut: string };
+    zIndices: number[];
+  }
+}
+
 export type Theme = {
   spaces: string[];
   colors: {

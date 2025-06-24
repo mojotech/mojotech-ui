@@ -4,10 +4,16 @@ import Box, { BoxProps } from "./Box";
 
 const Wrap: React.FC<BoxProps> = styled(Box)();
 
-Wrap.defaultProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<BoxProps> = {
   gridColumn: ["1/-1", "3 / span 8"],
 };
 
-Wrap.displayName = "Wrap";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const WrapWithDefaults: React.FC<BoxProps> = (props) => {
+  return <Wrap {...defaultProps} {...props} />;
+};
 
-export default Wrap;
+WrapWithDefaults.displayName = "Wrap";
+
+export default WrapWithDefaults;

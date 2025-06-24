@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { storiesOf } from "@storybook/react";
+import { css } from "@emotion/react";
 import AutoGrid from "../src/components/AutoGrid";
 
 const styles = css({
@@ -9,17 +7,26 @@ const styles = css({
   width: "100%",
 });
 
-storiesOf("AutoGrid", module).add("Grid", () => (
-  <AutoGrid>
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-    <div css={styles} />
-  </AutoGrid>
-));
+const meta = {
+  title: "AutoGrid",
+  component: AutoGrid,
+};
+
+export default meta;
+
+export const Grid = {
+  render: () => (
+    <AutoGrid>
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+      <div css={styles} />
+    </AutoGrid>
+  ),
+};

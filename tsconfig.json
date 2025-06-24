@@ -6,7 +6,8 @@
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "moduleResolution": "node",
     "rootDirs": ["src", "stories"],
     "forceConsistentCasingInFileNames": true,
@@ -14,13 +15,10 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  },
-  "include": ["src/**/*", "stories/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  }
 }

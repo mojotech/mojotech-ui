@@ -2,14 +2,24 @@ import * as React from "react";
 import styled from "../lib/styled";
 import Box, { BoxProps } from "./Box";
 
-const Section: React.FC<BoxProps> = styled(Box)<BoxProps>();
+export interface Props extends BoxProps {
+  children?: React.ReactNode;
+  scheme?: string;
+}
 
-Section.defaultProps = {
-  ...Box.defaultProps,
+const Section: React.FC<Props> = styled(Box)();
+
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<Props> = {
   as: "section",
   marginBottom: 5,
 };
 
-Section.displayName = "Section";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const SectionWithDefaults: React.FC<Props> = (props) => {
+  return <Section {...defaultProps} {...props} />;
+};
 
-export default Section;
+SectionWithDefaults.displayName = "Section";
+
+export default SectionWithDefaults;

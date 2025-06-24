@@ -32,21 +32,25 @@ export type TextProps = TextSetProps &
   React.AnchorHTMLAttributes<HTMLAnchorElement> &
   React.HTMLAttributes<HTMLElement>;
 
-interface Props extends TextProps {}
+export interface Props extends TextProps {}
 
 const getLineHeights = (size: any, theme: Theme) => {
+  if (!theme?.lineHeights) {
+    return 1.4; // fallback line height
+  }
+
   const getValue = (fs: any) => {
     switch (fs) {
       case 5:
-        return theme.lineHeights[3];
+        return theme.lineHeights[3] || 1.1;
       case 4:
-        return theme.lineHeights[2];
+        return theme.lineHeights[2] || 1.2;
       case 3:
-        return theme.lineHeights[1];
+        return theme.lineHeights[1] || 1.3;
       case 0:
-        return theme.lineHeights[1];
+        return theme.lineHeights[1] || 1.3;
       default:
-        return theme.lineHeights[0];
+        return theme.lineHeights[0] || 1.4;
     }
   };
 
@@ -58,22 +62,30 @@ const getLineHeights = (size: any, theme: Theme) => {
 };
 
 const getMarginBottom = (size: any, theme: Theme) => {
-  if (isArray(size)) {
-    return [theme.spaces[size[0]], theme.spaces[size[1]]];
+  if (!theme?.spaces) {
+    return "0px"; // fallback margin
   }
 
-  return theme.spaces[size];
+  if (isArray(size)) {
+    return [theme.spaces[size[0]] || "0px", theme.spaces[size[1]] || "0px"];
+  }
+
+  return theme.spaces[size] || "0px";
 };
 
 const getTracking = (size: any, theme: Theme) => {
+  if (!theme?.letterSpacing) {
+    return "0em"; // fallback letter spacing
+  }
+
   const getValue = (fs: any) => {
     switch (fs) {
       case 5:
-        return theme.letterSpacing[1];
+        return theme.letterSpacing[1] || "-0.025em";
       case 4:
-        return theme.letterSpacing[2];
+        return theme.letterSpacing[2] || "-0.015em";
       default:
-        return theme.letterSpacing[0];
+        return theme.letterSpacing[0] || "0em";
     }
   };
 
@@ -81,12 +93,17 @@ const getTracking = (size: any, theme: Theme) => {
 };
 
 const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
-  (props) =>
-    mq({
+  (props) => {
+    if (!props.theme) {
+      return {}; // return empty styles if theme is undefined
+    }
+
+    return mq({
       lineHeight: getLineHeights(props.fontSize, props.theme),
       marginBottom: getMarginBottom(props.fontSize, props.theme),
       letterSpacing: getTracking(props.fontSize, props.theme),
-    }),
+    });
+  },
   layoutSet,
   opacity,
   spaceSet,
@@ -96,13 +113,19 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
   cursorSet,
 );
 
-Text.defaultProps = {
+// Fallback default props for React 19 compatibility
+const defaultProps: Partial<Props> = {
   color: "inherit",
   fontSize: 1,
   fontFamily: "main",
   textDecoration: "none",
 };
 
-Text.displayName = "Text";
+// Apply default props manually since React 19 deprecated defaultProps for function components
+const TextWithDefaults: React.FC<Props> = (props) => {
+  return <Text {...defaultProps} {...props} />;
+};
 
-export default Text;
+TextWithDefaults.displayName = "Text";
+
+export default TextWithDefaults;
