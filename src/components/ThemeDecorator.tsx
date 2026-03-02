@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
 import Reset from "./Reset";
 import t from "../lib/theme";
 import { Theme } from "../types/global";
@@ -20,7 +20,5 @@ const ThemeDecorator = ({ ...props }) => (
     </ThemeProvider>
   </MojoThemeContext.Provider>
 );
-
-ThemeDecorator.displayName = "ThemeDecorator";
 
 export default ThemeDecorator;

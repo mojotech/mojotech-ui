@@ -1,4 +1,3 @@
-import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import TextLink from "../src/components/TextLink";
 import SchemeProvider from "../src/components/SchemeProvider";

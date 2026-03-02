@@ -8,7 +8,12 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "awesome-typescript-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            configFile: "tsconfig.build.json",
+          },
+        },
         exclude: /node_modules/,
       },
     ],
@@ -18,13 +23,18 @@ module.exports = {
   },
   externals: {
     react: "react",
-    "react-dom": "reactDOM",
+    "react-dom": "react-dom",
+    "@emotion/react": "@emotion/react",
+    "@emotion/styled": "@emotion/styled",
+    "onno-react": "onno-react",
   },
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    library: "mojo-ui",
-    libraryTarget: "umd",
-    umdNamedDefine: true,
+    library: {
+      name: "mojo-ui",
+      type: "umd",
+    },
+    globalObject: "this",
   },
 };

@@ -40,10 +40,8 @@ const omitProps = omit({
   ],
 });
 
-export function polymorph<P extends unknown>(
-  defaultEl: React.ElementType,
-): React.FunctionComponent<PolymorphProps & P> {
-  return props => {
+export function polymorph<P extends unknown>(defaultEl: React.ElementType) {
+  return (props: PolymorphProps & P) => {
     const Element = props.as || defaultEl;
     return <Element {...omitProps(props)} />;
   };

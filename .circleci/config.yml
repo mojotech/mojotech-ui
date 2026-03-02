@@ -3,26 +3,26 @@ version: 2
 defaults: &defaults
   working_directory: /tmp/mojotech-ui
   docker:
-    - image: circleci/node:8.11
+    - image: cimg/node:20.18
 
 jobs:
   build:
     <<: *defaults
     steps:
-       - checkout
-       - run: cp .npmrc.ci .npmrc
-       - restore_cache:
-           key: v1-dependencies-{{ checksum "package-lock.json" }}
-       - run: npm install
-       - save_cache:
-           key: v1-dependencies-{{ checksum "package-lock.json" }}
-           paths:
-             - ./node_modules
-       - run: npm run build
-       - persist_to_workspace:
-           root: /tmp
-           paths:
-             - mojotech-ui
+      - checkout
+      - run: cp .npmrc.ci .npmrc
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run: npm run build
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - mojotech-ui
 
   ensure_version_bump:
     <<: *defaults

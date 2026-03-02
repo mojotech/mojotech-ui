@@ -15,18 +15,14 @@ interface Props extends TextInputProps {
   type?: string;
 }
 
-const StyledTextInput: React.FC<Props> = styled.input<Props>(
-  spaceSet,
-  fontSize,
-  props => ({
-    background: "none",
-    border: "none",
-    borderBottom: `1px solid ${props.theme.colors.dark}30`,
-    width: "100%",
-  }),
-);
+const StyledTextInput = styled.input<Props>(spaceSet, fontSize, (props) => ({
+  background: "none",
+  border: "none",
+  borderBottom: `1px solid ${props.theme.colors.dark}30`,
+  width: "100%",
+}));
 
-export const TextInput: React.FC<Props> = props => {
+export const TextInput = (props: Props) => {
   const [focus, setFocus] = React.useState<boolean>(false);
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,14 +67,5 @@ export const TextInput: React.FC<Props> = props => {
     </Box>
   );
 };
-
-TextInput.defaultProps = {
-  paddingY: 1,
-  fontSize: 2,
-  label: "label",
-  type: "text",
-};
-
-TextInput.displayName = "TextInput";
 
 export default TextInput;

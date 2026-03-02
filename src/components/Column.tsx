@@ -1,8 +1,9 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
+// @ts-ignore - jsx import is used by JSX pragma
+import { jsx } from "@emotion/react";
 import { Theme } from "../types/global";
 
-const Column: React.FC = props => (
+const Column = (props: any) => (
   <div
     css={({ ...theme }: Theme) => ({
       flexBasis: "calc((30rem - 100%) * 9999)",
@@ -13,7 +14,5 @@ const Column: React.FC = props => (
     {...props}
   />
 );
-
-Column.displayName = "Column";
 
 export default Column;
