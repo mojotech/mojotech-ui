@@ -16,6 +16,6 @@ const schemeSet = variant({
   renderers: [colorSet],
 });
 
-const SchemeProvider = styled(Box as any)<Props>(schemeSet);
+const SchemeProvider = styled(Box)<Props>(schemeSet);
 
 export default SchemeProvider;

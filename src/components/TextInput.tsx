@@ -33,12 +33,8 @@ export const TextInput = (props: Props) => {
     setFocus(true);
   };
 
-  const BoxComponent = Box as any;
-  const TextComponent = Text as any;
-  const InputComponent = StyledTextInput as any;
-
   return (
-    <BoxComponent
+    <Box
       display="block"
       as="label"
       marginBottom={3}
@@ -46,7 +42,7 @@ export const TextInput = (props: Props) => {
       height="100%"
       width="100%"
     >
-      <TextComponent
+      <Text
         bottom={0}
         position="absolute"
         transformOrigin="left"
@@ -57,8 +53,8 @@ export const TextInput = (props: Props) => {
         fontSize={1}
       >
         {props.label}
-      </TextComponent>
-      <InputComponent
+      </Text>
+      <StyledTextInput
         name={props.name}
         paddingBottom={1}
         type={props.type}
@@ -68,7 +64,7 @@ export const TextInput = (props: Props) => {
         required={props.required}
         aria-label={props.label}
       />
-    </BoxComponent>
+    </Box>
   );
 };
 

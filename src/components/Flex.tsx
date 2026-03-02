@@ -4,6 +4,6 @@ import Box, { BoxProps } from "./Box";
 
 export type FlexProps = FlexParentSetProps & BoxProps;
 
-const Flex = styled(Box as any)<FlexProps>(flexParentSet);
+const Flex = styled(Box)<FlexProps>(flexParentSet);
 
 export default Flex;

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import * as React from "react";
+import type * as React from "react";
 import styled from "../lib/styled";
 import Box, { BoxProps } from "./Box";
 import { textSet, TextSetProps } from "onno-react";
@@ -12,7 +12,7 @@ interface Props extends ButtonProps {
   scheme?: "dark" | "light";
 }
 
-const Button = styled(Box as any)<Props>(
+const Button: React.FC<Props> = styled(Box)(
   (props: Props) => ({
     backgroundColor: props.scheme === "light" ? "#14111D" : "white",
     color: props.scheme === "light" ? "white" : "#14111D",
@@ -60,5 +60,15 @@ const Button = styled(Box as any)<Props>(
   },
   textSet,
 );
+
+Button.defaultProps = {
+  as: "button",
+  paddingX: 5,
+  paddingY: 3,
+  fontSize: 2,
+  scheme: "dark",
+};
+
+Button.displayName = "Button";
 
 export default Button;
