@@ -1,4 +1,3 @@
-import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import Wrap from "../src/components/Wrap";
 import Row from "../src/components/Row";

@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import type * as React from "react";
 import styled from "../lib/styled";
 import Box, { BoxProps } from "./Box";

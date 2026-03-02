@@ -1,4 +1,3 @@
-import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import Flex from "../src/components/Flex";
 import Text from "../src/components/Text";
