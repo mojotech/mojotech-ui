@@ -12,7 +12,7 @@ interface Props extends ButtonProps {
   scheme?: "dark" | "light";
 }
 
-const Button: React.FC<Props> = styled(Box)(
+const Button = styled(Box)<Props>(
   (props: Props) => ({
     backgroundColor: props.scheme === "light" ? "#14111D" : "white",
     color: props.scheme === "light" ? "white" : "#14111D",

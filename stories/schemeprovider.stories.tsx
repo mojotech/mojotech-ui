@@ -2,7 +2,7 @@
 import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import Wrap from "../src/components/Wrap";
-import { jsx } from "@emotion/core";
+import { jsx } from "@emotion/react";
 import Row from "../src/components/Row";
 import Column from "../src/components/Column";
 import SchemeProvider from "../src/components/SchemeProvider";

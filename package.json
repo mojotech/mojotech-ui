@@ -27,8 +27,8 @@
   "homepage": "https://github.com/mojotech/mojotech-ui/blob/master/README.md",
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@emotion/core": "^10.0.15",
-    "@emotion/styled": "^10.0.15",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@storybook/addon-actions": "^5.1.10",
     "@storybook/addon-info": "^5.1.10",
     "@storybook/addon-links": "^5.1.10",
@@ -43,7 +43,6 @@
     "@types/storybook__addon-links": "^3.3.5",
     "@types/storybook__react": "^4.0.2",
     "babel-loader": "^8.0.6",
-    "emotion-theming": "^10.0.14",
     "jest": "^24.9.0",
     "onno-react": "^1.0.0",
     "react": "^18.3.1",
@@ -60,9 +59,8 @@
     "prettier": "^1.18.2"
   },
   "peerDependencies": {
-    "@emotion/core": ">= 10.0.15",
-    "@emotion/styled": ">= 10.0.15",
-    "emotion-theming": ">= 10.0.14",
+    "@emotion/react": ">= 11.0.0",
+    "@emotion/styled": ">= 11.0.0",
     "onno-react": ">= 1.0.0",
     "react": ">= 18.0.0",
     "react-dom": ">= 18.0.0"

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 // @ts-ignore - jsx import is used by JSX pragma
-import { jsx } from "@emotion/core";
+import { jsx } from "@emotion/react";
 import { Theme } from "../types/global";
 
 const Column = (props: any) => (

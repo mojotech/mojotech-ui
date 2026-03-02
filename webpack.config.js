@@ -19,6 +19,9 @@ module.exports = {
   externals: {
     react: "react",
     "react-dom": "react-dom",
+    "@emotion/react": "@emotion/react",
+    "@emotion/styled": "@emotion/styled",
+    "onno-react": "onno-react",
   },
   output: {
     filename: "bundle.js",
