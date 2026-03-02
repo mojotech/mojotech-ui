@@ -37,8 +37,8 @@
     "@storybook/react": "^5.1.10",
     "@types/facepaint": "^1.2.0",
     "@types/jest": "^24.0.16",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@types/storybook__addon-actions": "^3.4.3",
     "@types/storybook__addon-links": "^3.3.5",
     "@types/storybook__react": "^4.0.2",
@@ -46,9 +46,9 @@
     "emotion-theming": "^10.0.14",
     "jest": "^24.9.0",
     "onno-react": "^1.0.0",
-    "react": "^16.8.6",
+    "react": "^18.3.1",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-dom": "^16.8.6",
+    "react-dom": "^18.3.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.6.3",
@@ -64,7 +64,7 @@
     "@emotion/styled": ">= 10.0.15",
     "emotion-theming": ">= 10.0.14",
     "onno-react": ">= 1.0.0",
-    "react": ">= 16.8.6",
-    "react-dom": ">= 16.8.6"
+    "react": ">= 18.0.0",
+    "react-dom": ">= 18.0.0"
   }
 }

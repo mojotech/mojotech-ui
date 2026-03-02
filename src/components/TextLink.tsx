@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import styled from "../lib/styled";
 import Text, { TextProps } from "./Text";
 import { rgbaify } from "../lib/utils";
@@ -11,7 +11,7 @@ interface Props extends TextLinkProps {
   underline?: boolean;
 }
 
-const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
+const TextLink = styled(Text as any)<Props>(props =>
   props.underline
     ? {
         boxShadow:
@@ -20,12 +20,8 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
             : `inset 0 -1px 0 0 ${rgbaify(props.theme.colors.dark, 0.4)}`,
         backgroundImage:
           props.scheme === "dark"
-            ? `linear-gradient(${props.theme.colors.white}, ${
-                props.theme.colors.white
-              })`
-            : `linear-gradient(${props.theme.colors.dark}, ${
-                props.theme.colors.dark
-              })`,
+            ? `linear-gradient(${props.theme.colors.white}, ${props.theme.colors.white})`
+            : `linear-gradient(${props.theme.colors.dark}, ${props.theme.colors.dark})`,
         backgroundPosition: "100% 100%",
         backgroundRepeat: "no-repeat",
         backgroundSize: "0% 1px",
@@ -44,16 +40,5 @@ const TextLink: React.FC<Props> = styled(Text)<Props>(props =>
         },
       },
 );
-
-TextLink.defaultProps = {
-  as: "a",
-  opacity: 0,
-  cursor: "pointer",
-  scheme: "light",
-  underline: false,
-  ...Text.defaultProps,
-};
-
-TextLink.displayName = "TextLink";
 
 export default TextLink;

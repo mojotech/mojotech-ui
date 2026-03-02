@@ -1,4 +1,3 @@
-import * as React from "react";
 import { variant, colorSet, ColorSetProps } from "onno-react";
 import styled from "../lib/styled";
 import Box, { BoxProps } from "./Box";
@@ -17,14 +16,6 @@ const schemeSet = variant({
   renderers: [colorSet],
 });
 
-const SchemeProvider: React.FC<Props> = styled(Box)(schemeSet);
-
-const schemeProviderDefaultProps: Props = {
-  scheme: "dark",
-};
-
-SchemeProvider.defaultProps = schemeProviderDefaultProps;
-
-SchemeProvider.displayName = "SchemeProvider";
+const SchemeProvider = styled(Box as any)<Props>(schemeSet);
 
 export default SchemeProvider;

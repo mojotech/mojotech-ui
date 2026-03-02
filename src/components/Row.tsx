@@ -1,8 +1,9 @@
 /** @jsx jsx */
+// @ts-ignore - jsx import is used by JSX pragma
 import { jsx } from "@emotion/core";
 import { Theme } from "../types/global";
 
-const Row: React.FC = props => (
+const Row = (props: any) => (
   <div
     css={({ ...theme }: Theme) => ({
       display: "flex",
@@ -14,7 +15,5 @@ const Row: React.FC = props => (
     {...props}
   />
 );
-
-Row.displayName = "Row";
 
 export default Row;

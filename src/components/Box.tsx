@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import {
   backgroundSet,
   BackgroundSetProps,
@@ -20,7 +20,6 @@ import {
   TextSetProps,
   transformSet,
   TransformSetProps,
-  propTypes,
 } from "onno-react";
 
 import styled from "../lib/styled";
@@ -55,20 +54,5 @@ const Box = styled(polymorph<BoxProps>("div"))<BoxProps>(
   textSet,
   transformSet,
 );
-
-Box.propTypes = propTypes([
-  backgroundSet,
-  borderSet,
-  cursorSet,
-  displaySet,
-  flexChildSet,
-  gridChildSet,
-  layoutSet,
-  spaceSet,
-  textSet,
-  transformSet,
-]);
-
-Box.displayName = "Box";
 
 export default Box;

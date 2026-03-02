@@ -12,7 +12,7 @@ interface Props extends ButtonProps {
   scheme?: "dark" | "light";
 }
 
-const Button: React.FC<Props> = styled(Box)(
+const Button = styled(Box as any)<Props>(
   (props: Props) => ({
     backgroundColor: props.scheme === "light" ? "#14111D" : "white",
     color: props.scheme === "light" ? "white" : "#14111D",
@@ -60,15 +60,5 @@ const Button: React.FC<Props> = styled(Box)(
   },
   textSet,
 );
-
-Button.defaultProps = {
-  as: "button",
-  paddingX: 5,
-  paddingY: 3,
-  fontSize: 2,
-  scheme: "dark",
-};
-
-Button.displayName = "Button";
 
 export default Button;

@@ -21,6 +21,4 @@ const ThemeDecorator = ({ ...props }) => (
   </MojoThemeContext.Provider>
 );
 
-ThemeDecorator.displayName = "ThemeDecorator";
-
 export default ThemeDecorator;

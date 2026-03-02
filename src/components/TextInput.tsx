@@ -15,18 +15,14 @@ interface Props extends TextInputProps {
   type?: string;
 }
 
-const StyledTextInput: React.FC<Props> = styled.input<Props>(
-  spaceSet,
-  fontSize,
-  props => ({
-    background: "none",
-    border: "none",
-    borderBottom: `1px solid ${props.theme.colors.dark}30`,
-    width: "100%",
-  }),
-);
+const StyledTextInput = styled.input<Props>(spaceSet, fontSize, props => ({
+  background: "none",
+  border: "none",
+  borderBottom: `1px solid ${props.theme.colors.dark}30`,
+  width: "100%",
+}));
 
-export const TextInput: React.FC<Props> = props => {
+export const TextInput = (props: Props) => {
   const [focus, setFocus] = React.useState<boolean>(false);
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,8 +33,12 @@ export const TextInput: React.FC<Props> = props => {
     setFocus(true);
   };
 
+  const BoxComponent = Box as any;
+  const TextComponent = Text as any;
+  const InputComponent = StyledTextInput as any;
+
   return (
-    <Box
+    <BoxComponent
       display="block"
       as="label"
       marginBottom={3}
@@ -46,7 +46,7 @@ export const TextInput: React.FC<Props> = props => {
       height="100%"
       width="100%"
     >
-      <Text
+      <TextComponent
         bottom={0}
         position="absolute"
         transformOrigin="left"
@@ -57,8 +57,8 @@ export const TextInput: React.FC<Props> = props => {
         fontSize={1}
       >
         {props.label}
-      </Text>
-      <StyledTextInput
+      </TextComponent>
+      <InputComponent
         name={props.name}
         paddingBottom={1}
         type={props.type}
@@ -68,17 +68,8 @@ export const TextInput: React.FC<Props> = props => {
         required={props.required}
         aria-label={props.label}
       />
-    </Box>
+    </BoxComponent>
   );
 };
-
-TextInput.defaultProps = {
-  paddingY: 1,
-  fontSize: 2,
-  label: "label",
-  type: "text",
-};
-
-TextInput.displayName = "TextInput";
 
 export default TextInput;

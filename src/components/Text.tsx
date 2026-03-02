@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import styled from "../lib/styled";
 import {
   textSet,
@@ -80,8 +80,8 @@ const getTracking = (size: any, theme: Theme) => {
   return getValue(size);
 };
 
-const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
-  (props) =>
+const Text = styled(polymorph<Props>("p"))<Props>(
+  props =>
     mq({
       lineHeight: getLineHeights(props.fontSize, props.theme),
       marginBottom: getMarginBottom(props.fontSize, props.theme),
@@ -95,14 +95,5 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
   textSet,
   cursorSet,
 );
-
-Text.defaultProps = {
-  color: "inherit",
-  fontSize: 1,
-  fontFamily: "main",
-  textDecoration: "none",
-};
-
-Text.displayName = "Text";
 
 export default Text;
