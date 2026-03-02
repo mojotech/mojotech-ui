@@ -11,7 +11,7 @@ interface Props extends TextLinkProps {
   underline?: boolean;
 }
 
-const TextLink = styled(Text as any)<Props>(props =>
+const TextLink = styled(Text as any)<Props>((props) =>
   props.underline
     ? {
         boxShadow:

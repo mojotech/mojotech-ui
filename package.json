@@ -10,7 +10,7 @@
     "start": "storybook dev -p 6006",
     "prepare": "npm run build",
     "build-storybook": "storybook build",
-    "prettify": "prettier --write 'src/**/*.{ts, tsx}'"
+    "prettify": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "babel-loader": "^8.0.6",
     "jest": "^24.9.0",
     "onno-react": "^1.0.0",
+    "prettier": "^3.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "storybook": "^8.4.7",
@@ -50,8 +51,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "facepaint": "^1.2.1",
-    "prettier": "^1.18.2"
+    "facepaint": "^1.2.1"
   },
   "peerDependencies": {
     "@emotion/react": ">= 11.0.0",

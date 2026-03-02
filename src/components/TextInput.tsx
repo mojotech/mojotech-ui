@@ -15,7 +15,7 @@ interface Props extends TextInputProps {
   type?: string;
 }
 
-const StyledTextInput = styled.input<Props>(spaceSet, fontSize, props => ({
+const StyledTextInput = styled.input<Props>(spaceSet, fontSize, (props) => ({
   background: "none",
   border: "none",
   borderBottom: `1px solid ${props.theme.colors.dark}30`,
