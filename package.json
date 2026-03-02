@@ -21,6 +21,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "homepage": "https://github.com/mojotech/mojotech-ui/blob/master/README.md",
   "devDependencies": {
     "@babel/core": "^7.5.5",
