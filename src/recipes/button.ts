@@ -3,14 +3,14 @@ import { tv, type VariantProps } from '../tv';
 /**
  * Button. Replaces the v3 `Button`.
  *
- * Two slots: `root` (the element) and `shine` (a `::`-free sliding overlay the
- * consumer renders as an `aria-hidden` child and which animates on `group-hover`).
- * `scheme` controls contrast; `size` maps to the old paddingX/Y + fontSize defaults.
- * Fixes the v3 bug where the `::after` blend layer used an invalid `background-color: dark`.
+ * Two slots: `base` (the element) and `shine` (a sliding overlay the consumer
+ * renders as an `aria-hidden` child, animated on `group-hover`). `scheme` controls
+ * contrast; `size` maps to the old paddingX/Y + fontSize defaults. Fixes the v3 bug
+ * where the `::after` blend layer used an invalid `background-color: dark`.
  */
 export const button = tv({
   slots: {
-    root:
+    base:
       'group relative z-[1] block cursor-pointer overflow-hidden border-0 ' +
       'transition-[filter] duration-500 ease-mojo-out hover:brightness-110 focus-visible:brightness-110 ' +
       "after:absolute after:inset-0 after:z-[100] after:content-[''] after:bg-dark after:mix-blend-screen",
@@ -21,15 +21,15 @@ export const button = tv({
   },
   variants: {
     scheme: {
-      dark: { root: 'bg-white text-dark' },
-      light: { root: 'bg-dark text-white' },
+      dark: { base: 'bg-white text-dark' },
+      light: { base: 'bg-dark text-white' },
     },
     size: {
-      sm: { root: 'px-fluid-4 py-fluid-2 text-h3' },
-      md: { root: 'px-fluid-5 py-fluid-3 text-h3' },
-      lg: { root: 'px-fluid-6 py-fluid-4 text-h2' },
+      sm: { base: 'px-fluid-4 py-fluid-2 text-h3' },
+      md: { base: 'px-fluid-5 py-fluid-3 text-h3' },
+      lg: { base: 'px-fluid-6 py-fluid-4 text-h2' },
     },
-    disabled: { true: { root: 'opacity-60 pointer-events-none' } },
+    disabled: { true: { base: 'opacity-60 pointer-events-none' } },
   },
   defaultVariants: { scheme: 'dark', size: 'md' },
 });

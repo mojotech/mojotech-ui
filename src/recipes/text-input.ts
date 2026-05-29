@@ -3,15 +3,15 @@ import { tv, type VariantProps } from '../tv';
 /**
  * Labeled text input with a floating label. Replaces the v3 `TextInput`.
  *
- * Three slots: `root` (the `<label>` wrapper), `input`, and `label`. The float is
- * pure CSS — the label lifts on `:focus` and while the input is filled
- * (`:not(:placeholder-shown)`), so NO JavaScript ships for the common case. The
- * consumer renders `<input>` BEFORE `<label>` (so `peer` resolves) with
+ * Three slots: `base` (the `<label>` wrapper), `input`, and `label` (the floating
+ * text). The float is pure CSS — the label lifts on `:focus` and while the input is
+ * filled (`:not(:placeholder-shown)`), so NO JavaScript ships for the common case.
+ * The consumer renders `<input>` BEFORE `<label>` (so `peer` resolves) with
  * `placeholder=" "`. Fixes the v3 bug where the label `opacity` was always 0.
  */
 export const textInput = tv({
   slots: {
-    root: 'relative block h-full w-full mb-fluid-3',
+    base: 'relative block h-full w-full mb-fluid-3',
     input:
       'peer block w-full border-0 border-b border-b-dark/20 bg-transparent py-fluid-1 placeholder:opacity-0 focus:outline-none',
     label:
