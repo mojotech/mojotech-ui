@@ -1,0 +1,86 @@
+{
+  "name": "@mojotech/mojo-ui",
+  "version": "4.0.0",
+  "description": "Framework-agnostic MojoTech design system: a Tailwind v4 theme plus tailwind-variants recipes that return className strings for any framework.",
+  "keywords": [
+    "design-system",
+    "tailwindcss",
+    "tailwind-variants",
+    "framework-agnostic",
+    "recipes",
+    "mojotech"
+  ],
+  "license": "ISC",
+  "author": "MojoTech",
+  "homepage": "https://github.com/mojotech/mojotech-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojotech/mojotech-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mojotech/mojotech-ui/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./*": {
+      "types": "./dist/recipes/*.d.ts",
+      "default": "./dist/recipes/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "test": "bun test",
+    "check": "biome check . && tsc --noEmit && bun test",
+    "validate": "bun run build && publint --strict dist",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun run build && changeset publish",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "tailwind-variants": "^3.2.2"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "@changesets/cli": "^2.31.0",
+    "@types/bun": "^1.3.14",
+    "publint": "^0.3.21",
+    "tailwindcss": "^4.3.0",
+    "tsdown": "^0.22.1",
+    "typescript": "^6.0.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "packageManager": "bun@1.3.1",
+  "engines": {
+    "node": ">=22",
+    "bun": ">=1.2"
+  }
+}
