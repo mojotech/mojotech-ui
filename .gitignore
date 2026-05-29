@@ -1,5 +1,5 @@
 node_modules
-build
-storybook-static
 dist
+coverage
+*.tsbuildinfo
 .DS_Store

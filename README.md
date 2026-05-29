@@ -1,56 +1,95 @@
-# MojoTech UI
-A set of styled React components for MojoTech.com user interfaces.
+# @mojotech/mojo-ui
 
-## Usage
-Mojo-UI is available as an npm module. Install the ui lib and peer dependencies
+A **framework-agnostic** design system for MojoTech UIs. It ships a [Tailwind v4](https://tailwindcss.com)
+theme plus [`tailwind-variants`](https://www.tailwind-variants.org) **recipes** — pure functions that
+take variant props and return `className` strings. Because recipes return plain strings, the *same*
+recipe powers a React, Vue, or Svelte component that **you** write and own. No runtime, no framework
+lock-in, SSR/RSC-safe.
+
+> v4 is a complete, breaking rewrite of the v3 Emotion + onno-react component library. See
+> [`docs/v4-vision.md`](docs/v4-vision.md) for the full design and a migration cheat sheet.
+
+## Install
 
 ```sh
-# with yarn
-yarn add @mojotech/mojo-ui @emotion/core @emotion/styled emotion-theming onno-react
-
-# with npm
-npm install @mojotech/mojo-ui @emotion/core @emotion/styled emotion-theming onno-react
+bun add @mojotech/mojo-ui          # + npm i / pnpm add
+# peer dependency:
+bun add -d tailwindcss
 ```
-When using make sure to wrap all the components in the `<ThemeDecorator />` component. This component provides the theme styles for the components, as well as adds MojoTech fonts and CSS reset.
 
-Example:
+## Setup
+
+In your Tailwind entry CSS:
+
+```css
+@import "tailwindcss";
+@import "@mojotech/mojo-ui/theme.css";
+
+/* REQUIRED: Tailwind never scans node_modules, so register the recipe output
+   or every recipe class is purged. */
+@source "../node_modules/@mojotech/mojo-ui/dist";
+```
+
+## Usage
+
+Recipes return strings; you own the element and its behavior.
+
 ```tsx
-import * as React from 'react'
-import { ThemeDecorator, Section, Text } from '@mojotech/mojo-ui'
+// React
+import { button, type ButtonVariants } from '@mojotech/mojo-ui/button';
+import { cn } from '@mojotech/mojo-ui';
 
-const Page: React.FunctionComponent = () => (
-  <ThemeDecorator>
-    <Section>
-      <Text as="h1" fontSize={5}>Build Better.</Text>
-    </Section>
-  </ThemeDecorator>
-)
-
+type Props = ButtonVariants & React.ButtonHTMLAttributes<HTMLButtonElement>;
+export const Button = ({ scheme, size, className, ...rest }: Props) => {
+  const { base, shine } = button({ scheme, size });
+  return (
+    <button className={cn(base(), className)} {...rest}>
+      <span className={shine()} aria-hidden />
+      <span className="relative z-[2]">{rest.children}</span>
+    </button>
+  );
+};
 ```
+
+```vue
+<!-- Vue — same import, same call, no React in the graph -->
+<script setup lang="ts">
+import { button } from '@mojotech/mojo-ui/button';
+const { base } = button({ scheme: 'light' });
+</script>
+<template><button :class="base()"><slot /></button></template>
+```
+
+### Color schemes
+
+Schemes are a `data-scheme` attribute + semantic `bg`/`fg` tokens — no provider/context required:
+
+```tsx
+import { scheme } from '@mojotech/mojo-ui/scheme';
+<section data-scheme="dark" className={scheme()}> … </section>
+```
+
+### What diverges from stock Tailwind
+
+mojo-ui relies on the default Tailwind theme and only adds the brand on top (every divergence is
+flagged in `theme.css`):
+
+- **Fluid type** — semantic `text-body-sm … text-display` (clamp-based, with paired line-height/tracking)
+- **Fluid spacing** — `p-fluid-*`, `mb-fluid-*`, `gap-fluid-*`, … (the `0–6` calc/vw scale)
+- **Breakpoints** — `mojo-md:` (800px) / `mojo-lg:` (1600px); stock `sm/md/lg/xl/2xl` are untouched
+- **z-stack** — `z-modal`, `z-toast`, … ; brand colors, `font-main/display`, `ease-mojo-*`
+
+> Fonts: `theme.css` declares the `GT America` / `altis-mojoregular` (Adobe Fonts) families but does
+> **not** ship the font files — load your own licensed kit.
 
 ## Development
-Upon cloning the repo and installing the dependencies run `npm start` to start the storybook dev server. Run `npm run build-storybook` to build a static version of the storybook to the `storybook-static` folder. Run `npm build` to compile the library into the `dist` folder.
 
-### Components
-The components in this library are built using [emotion](https://emotion.sh/docs/styled), and [onno](https://github.com/wagerfield/onno). Emotion itself handles the styling of the components and onno provides the ability to use style props.
-
-#### Theme
-The core of the entire ui library is the [theme file](https://github.com/mojotech/mojotech-ui/blob/master/src/lib/theme.ts). The theme allows us to create a cohesive system of style values that are used across all components. The theme keys correspond to the [render functions](https://github.com/wagerfield/onno/blob/master/docs/render-functions.md) in onno. The array index of the property set in the theme is what onno looks for when applying the style.
-
-#### Style Props
-To style the components we use style props. For example:
-```tsx
-<Box marginBottom={2} />
+```sh
+bun install
+bun run check      # biome (lint + format) · tsc · bun test
+bun run build      # tsdown → dist (ESM + .d.ts + theme.css)
+bun run validate   # build + publint + attw
+bun run changeset  # record a release
 ```
-This would render out the Box component with a `marginBottom` that corresponds with the array index of `2` in the `spaces` [key](https://github.com/mojotech/mojotech-ui/blob/dcbd11b74014ed5f9392dd3bcbe6b55ac9ab0ecb/src/lib/theme.ts#L16) in the theme. The style props that are allowed to be used for each component are dictated by the render functions that each component uses. You can use your own non-theme values within the style props, but this should be only use sparingly as a means to preserve uniformity. For an extensive list of which css properties correspond to which render function visit the [onno docs](https://github.com/wagerfield/onno/blob/master/docs/render-functions.md).
 
-#### Responsive Values
-The breakpoints for the components are set via the theme. For example:
-```ts
-breakpoints: [0, 600, 1200]
-```
-This would set three `min-width` breakpoints. One at `0px`, `600px`, and `1200px`. To create responsive styles within a component you would use this syntax
-```tsx
-<Box marginBottom={[0, 1, 2]} />
-```
-This would set the `marginBottom` within each breakpoint at the corresponding index.
+See [`AGENTS.md`](AGENTS.md) for architecture and contribution conventions.

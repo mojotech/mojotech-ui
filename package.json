@@ -1,70 +1,88 @@
 {
   "name": "@mojotech/mojo-ui",
-  "version": "3.1.0",
-  "description": "A set of styled components for MojoTech user interfaces.",
-  "main": "dist/bundle.js",
-  "types": "dist/src/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "start-storybook -p 6006",
-    "prepare": "npm run build",
-    "build-storybook": "build-storybook",
-    "prettify": "prettier --write 'src/**/*.{ts, tsx}'"
-  },
+  "version": "4.0.0",
+  "description": "Framework-agnostic MojoTech design system: a Tailwind v4 theme plus tailwind-variants recipes that return className strings for any framework.",
+  "keywords": [
+    "design-system",
+    "tailwindcss",
+    "tailwind-variants",
+    "framework-agnostic",
+    "recipes",
+    "mojotech"
+  ],
+  "license": "ISC",
+  "author": "MojoTech",
+  "homepage": "https://github.com/mojotech/mojotech-ui#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mojotech/mojotech-ui.git"
+    "url": "git+https://github.com/mojotech/mojotech-ui.git"
   },
   "bugs": {
     "url": "https://github.com/mojotech/mojotech-ui/issues"
   },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://github.com/mojotech/mojotech-ui/blob/master/README.md",
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@emotion/core": "^10.0.15",
-    "@emotion/styled": "^10.0.15",
-    "@storybook/addon-actions": "^5.1.10",
-    "@storybook/addon-info": "^5.1.10",
-    "@storybook/addon-links": "^5.1.10",
-    "@storybook/addons": "^5.1.10",
-    "@storybook/cli": "^5.1.10",
-    "@storybook/react": "^5.1.10",
-    "@types/facepaint": "^1.2.0",
-    "@types/jest": "^24.0.16",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
-    "@types/storybook__addon-actions": "^3.4.3",
-    "@types/storybook__addon-links": "^3.3.5",
-    "@types/storybook__react": "^4.0.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
-    "bable-loader": "0.0.1-security",
-    "emotion-theming": "^10.0.14",
-    "jest": "^24.9.0",
-    "onno-react": "^1.0.0",
-    "react": "^16.8.6",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-dom": "^16.8.6",
-    "ts-jest": "^24.0.2",
-    "ttypescript": "^1.5.7",
-    "typescript": "^3.5.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.6"
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./*": {
+      "types": "./dist/recipes/*.d.ts",
+      "default": "./dist/recipes/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "test": "bun test",
+    "check": "biome check . && tsc --noEmit && bun test",
+    "validate": "bun run build && publint --strict && attw --pack . --profile esm-only --exclude-entrypoints theme.css",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "bun run build && changeset publish",
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
-    "facepaint": "^1.2.1",
-    "prettier": "^1.18.2"
+    "tailwind-merge": "^3.6.0",
+    "tailwind-variants": "^3.2.2"
   },
   "peerDependencies": {
-    "@emotion/core": ">= 10.0.15",
-    "@emotion/styled": ">= 10.0.15",
-    "emotion-theming": ">= 10.0.14",
-    "onno-react": ">= 1.0.0",
-    "react": ">= 16.8.6",
-    "react-dom": ">= 16.8.6"
+    "tailwindcss": ">=4"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.3",
+    "@biomejs/biome": "^2.4.16",
+    "@changesets/cli": "^2.31.0",
+    "@types/bun": "^1.3.14",
+    "publint": "^0.3.21",
+    "tailwindcss": "^4.3.0",
+    "tsdown": "^0.22.1",
+    "typescript": "^6.0.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "packageManager": "bun@1.3.1",
+  "engines": {
+    "node": ">=22",
+    "bun": ">=1.2"
   }
 }

@@ -1,0 +1,186 @@
+/*
+ * @mojotech/mojo-ui — Tailwind v4 theme
+ *
+ * Consumer setup:
+ *   @import "tailwindcss";
+ *   @import "@mojotech/mojo-ui/theme.css";
+ *   @source "../node_modules/@mojotech/mojo-ui/dist";   // REQUIRED — Tailwind never scans node_modules
+ *
+ * STRATEGY: rely on the default Tailwind v4 theme; every block below is a FLAGGED
+ * divergence from stock. ⚠️ marks a fundamental/mechanical divergence Tailwind has
+ * no native equivalent for; everything else is additive (new values, stock machinery).
+ * Token values are carried verbatim from the v3 theme (src/lib/theme.ts).
+ */
+
+@import "tailwindcss";
+
+@theme {
+  /* ── BREAKPOINTS — DIVERGENCE ⚠️: ADD namespaced (stock sm/md/lg/xl/2xl kept) ──
+   * Recipes use mojo-md:/mojo-lg:; a consumer's own md:/lg: keep their stock meaning.
+   * Maps the old mq([800, 1600]) two-stop model 1:1. */
+  --breakpoint-mojo-md: 50rem; /* 800px  */
+  --breakpoint-mojo-lg: 100rem; /* 1600px */
+
+  /* ── BRAND COLORS — DIVERGENCE: ADD (stock OKLCH palette kept) ───────────── */
+  --color-mojogreen: #00ba40;
+  --color-meangreen: #1e4d32;
+  --color-darkgreen: #193c2a;
+  --color-aa-mojogreen: #00882f; /* AA-contrast green for text on light */
+  --color-yellow: #e2a210;
+  --color-dark: #14111d;
+  --color-gray: #f0f0f0;
+  --color-medium-gray: #acacac;
+  --color-dark-gray: #5b5b5b;
+  --color-white: #ffffff;
+
+  /* ── FONT FAMILIES — DIVERGENCE: ADD named + make brand the default sans ────
+   * NOTE: 'altis-mojoregular' is an Adobe Fonts (Typekit) face — NOT redistributable
+   * here. Consumers load their own kit / self-host; this only declares the family. */
+  --font-main: "GT America Light", system-ui, sans-serif;
+  --font-regular: "GT America Regular", system-ui, sans-serif;
+  --font-display: "altis-mojoregular", system-ui, sans-serif;
+  --font-mono: "GT America Mono", ui-monospace, monospace;
+  --font-sans: var(--font-main);
+
+  /* ── FONT SIZES (FLUID clamp) — DIVERGENCE #1 ⚠️ ────────────────────────────
+   * Named semantic scale (BodySmall→Display); stock --text-xs..9xl kept as escape hatch.
+   * line-height + letter-spacing PAIRED per size, reproducing the old Text getters, so a
+   * bare `text-*` utility is self-sufficient. (body-sm clamp fixed from the v3 source's
+   * invalid `+ -0.07vw` to a valid negative slope; min < max.) */
+  --text-body-sm: clamp(0.84rem, 0.91rem - 0.07vw, 0.89rem);
+  --text-body-sm--line-height: 1.3;
+  --text-body-sm--letter-spacing: 0em;
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.13rem);
+  --text-body--line-height: 1.4;
+  --text-body--letter-spacing: 0em;
+  --text-h3: clamp(1.13rem, 0.98rem + 0.6vw, 1.5rem);
+  --text-h3--line-height: 1.4;
+  --text-h3--letter-spacing: 0em;
+  --text-h2: clamp(1.27rem, 0.97rem + 1.17vw, 2rem);
+  --text-h2--line-height: 1.3;
+  --text-h2--letter-spacing: 0em;
+  --text-h1: clamp(1.42rem, 0.93rem + 1.99vw, 2.66rem);
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: -0.015em;
+  --text-display: clamp(1.6rem, 0.82rem + 3.12vw, 3.55rem);
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.025em;
+
+  /* ── LINE HEIGHTS + LETTER SPACING — DIVERGENCE: ADD named (general purpose) ──
+   * The fluid type tokens already pair their own; these expose the raw brand scales. */
+  --leading-mojo-1: 1.4;
+  --leading-mojo-2: 1.3;
+  --leading-mojo-3: 1.2;
+  --leading-mojo-4: 1.1;
+  --tracking-mojo-0: 0em;
+  --tracking-mojo-1: -0.025em;
+  --tracking-mojo-2: -0.015em;
+
+  /* ── MAX WIDTHS — DIVERGENCE: ADD (100% = stock max-w-full) ────────────────── */
+  --container-mojo-md: 800px; /* -> max-w-mojo-md */
+  --container-mojo-lg: 1400px; /* -> max-w-mojo-lg */
+
+  /* ── EASINGS — DIVERGENCE: ADD namespaced (avoid overriding stock ease-out) ── */
+  --ease-mojo-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-mojo-in-out: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  /* ── SPACING (FLUID) — DIVERGENCE #2 ⚠️ ─────────────────────────────────────
+   * Stock spacing is a single 0.25rem multiplier (no named scale, no vw). The brand
+   * scale is a custom namespace driving the functional @utility families below; stock
+   * p-4/gap-2 stay intact for fixed needs. Values: calc(min + (max-min)*((100vw-400px)/1400)). */
+  --space-fluid-0: 0px;
+  --space-fluid-1: calc(4px + (8 - 4) * ((100vw - 400px) / 1400));
+  --space-fluid-2: calc(8px + (16 - 8) * ((100vw - 400px) / 1400));
+  --space-fluid-3: calc(18px + (24 - 18) * ((100vw - 400px) / 1400));
+  --space-fluid-4: calc(44px + (88 - 44) * ((100vw - 400px) / 1400));
+  --space-fluid-5: calc(88px + (176 - 88) * ((100vw - 400px) / 1400));
+  --space-fluid-6: calc(176px + (352 - 176) * ((100vw - 400px) / 1400));
+
+  /* ── Z-STACK — DIVERGENCE ⚠️: v4 has no --z-index-* namespace ──────────────── */
+  --z-sink: -1;
+  --z-overlay: 800;
+  --z-overlay-control: 900;
+  --z-modal: 1000;
+  --z-modal-bg: 2000;
+  --z-toast: 4000;
+  --z-toast-controls: 8000;
+}
+
+/* ── FLUID SPACING UTILITIES — functional, full 0–6 scale, purge-proof ──────────
+ * `--value(--space-fluid-*)` resolves e.g. `px-fluid-4` -> var(--space-fluid-4).
+ * Consumers get every (property × step) for migration (marginBottom={3} -> mb-fluid-3). */
+@utility p-fluid-* { padding: --value(--space-fluid-*); }
+@utility px-fluid-* { padding-inline: --value(--space-fluid-*); }
+@utility py-fluid-* { padding-block: --value(--space-fluid-*); }
+@utility pt-fluid-* { padding-top: --value(--space-fluid-*); }
+@utility pr-fluid-* { padding-right: --value(--space-fluid-*); }
+@utility pb-fluid-* { padding-bottom: --value(--space-fluid-*); }
+@utility pl-fluid-* { padding-left: --value(--space-fluid-*); }
+@utility m-fluid-* { margin: --value(--space-fluid-*); }
+@utility mx-fluid-* { margin-inline: --value(--space-fluid-*); }
+@utility my-fluid-* { margin-block: --value(--space-fluid-*); }
+@utility mt-fluid-* { margin-top: --value(--space-fluid-*); }
+@utility mr-fluid-* { margin-right: --value(--space-fluid-*); }
+@utility mb-fluid-* { margin-bottom: --value(--space-fluid-*); }
+@utility ml-fluid-* { margin-left: --value(--space-fluid-*); }
+@utility gap-fluid-* { gap: --value(--space-fluid-*); }
+@utility gap-x-fluid-* { column-gap: --value(--space-fluid-*); }
+@utility gap-y-fluid-* { row-gap: --value(--space-fluid-*); }
+
+/* ── Z-STACK UTILITIES — named (distinct from stock z-0..z-50; negative sink) ──── */
+@utility z-sink { z-index: var(--z-sink); }
+@utility z-overlay { z-index: var(--z-overlay); }
+@utility z-overlay-control { z-index: var(--z-overlay-control); }
+@utility z-modal { z-index: var(--z-modal); }
+@utility z-modal-bg { z-index: var(--z-modal-bg); }
+@utility z-toast { z-index: var(--z-toast); }
+@utility z-toast-controls { z-index: var(--z-toast-controls); }
+
+/* ── CUSTOM WIDTHS — vw fractions absent from stock w-* (100%/100vw = w-full/w-screen) ── */
+@utility w-mojo-55 { width: 55vw; }
+@utility w-mojo-66 { width: 66.666vw; }
+@utility w-mojo-90 { width: 90vw; }
+
+/* ── SCHEMES — DIVERGENCE ⚠️: no stock equivalent. Two mechanisms. ──────────────
+ * (A) Semantic tokens bg-bg / text-fg follow the [data-scheme] subtree. Distinct runtime
+ *     var names (--scheme-bg) are exposed to utilities via @theme inline, so the utility
+ *     references the reassignable runtime var (NOT a frozen value, NOT a circular self-ref). */
+:root,
+[data-scheme="light"] {
+  --scheme-bg: #ffffff;
+  --scheme-fg: #14111d;
+}
+[data-scheme="dark"] {
+  --scheme-bg: #14111d;
+  --scheme-fg: #ffffff;
+}
+[data-scheme="gray"] {
+  --scheme-bg: #f0f0f0;
+  --scheme-fg: #14111d;
+}
+
+@theme inline {
+  --color-bg: var(--scheme-bg);
+  --color-fg: var(--scheme-fg);
+}
+
+/* (B) Per-class variants for one-off overrides: scheme-dark:bg-dark, scheme-gray:text-dark … */
+@custom-variant scheme-light (&:where([data-scheme="light"], [data-scheme="light"] *));
+@custom-variant scheme-dark (&:where([data-scheme="dark"], [data-scheme="dark"] *));
+@custom-variant scheme-gray (&:where([data-scheme="gray"], [data-scheme="gray"] *));
+
+/* ── RESET residue — old Reset.tsx rules NOT covered by v4 Preflight ────────────
+ * Preflight already handles: box-sizing, margin/padding:0, border:0, headings→inherit,
+ * ol/ul/menu list-style:none, replaced-element display:block, img/video max-width:100%,
+ * table border-collapse + border-color:inherit. Only the genuine gaps ship here. */
+@layer base {
+  th {
+    text-align: left;
+  }
+  embed,
+  object,
+  iframe,
+  audio {
+    max-width: 100%;
+  }
+}

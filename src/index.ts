@@ -1,24 +1,30 @@
-export { default as BaseTheme } from "./lib/theme";
-export { Theme as MojoTheme } from "./types/global";
-export { zStack } from "./lib/theme";
-export { default as Button } from "./components/Button";
-export { default as Text } from "./components/Text";
-export { default as Reset } from "./components/Reset";
-export { default as Wrap } from "./components/Wrap";
-export { default as Row } from "./components/Row";
-export { default as Column } from "./components/Column";
-export { default as SchemeProvider } from "./components/SchemeProvider";
-export { default as Section } from "./components/Section";
-export { default as AutoGrid } from "./components/AutoGrid";
-export {
-  useMojoTheme,
-  default as ThemeDecorator,
-} from "./components/ThemeDecorator";
-export { default as TextInput } from "./components/TextInput";
-export { default as Box } from "./components/Box";
-export { default as Flex } from "./components/Flex";
-export { default as Grid } from "./components/Grid";
-export { default as TextLink } from "./components/TextLink";
-export { default as Image } from "./components/Image";
-export { default as ListItem } from "./components/ListItem";
-export { default as GridSystem } from "./components/GridSystem";
+/**
+ * @mojotech/mojo-ui — framework-agnostic recipes.
+ *
+ * Every export is a `tailwind-variants` recipe returning className strings, plus the
+ * merge helpers and design tokens. Pair with the theme:
+ *   @import "@mojotech/mojo-ui/theme.css";
+ * Subpath imports are also available, e.g. `@mojotech/mojo-ui/button`.
+ */
+
+export { type AutoGridVariants, autoGrid } from './recipes/auto-grid';
+// Interactive & content
+export { type ButtonVariants, button } from './recipes/button';
+// Layout
+export { type FlexVariants, flex } from './recipes/flex';
+export { type GridVariants, grid } from './recipes/grid';
+export { type GridSystemVariants, gridSystem } from './recipes/grid-system';
+export { type ImageVariants, image } from './recipes/image';
+export { type ListItemVariants, listItem } from './recipes/list-item';
+// Scheme
+export { type SchemeName, type SchemeVariants, scheme } from './recipes/scheme';
+export { type SectionVariants, section } from './recipes/section';
+// Typography
+export { type TextVariants, text } from './recipes/text';
+export { type TextInputVariants, textInput } from './recipes/text-input';
+export { type TextLinkVariants, textLink } from './recipes/text-link';
+export { type WrapVariants, wrap } from './recipes/wrap';
+// Design tokens (also available granularly from "@mojotech/mojo-ui/tokens").
+export { tokens, zStack } from './tokens';
+// Authoring helpers: the brand-configured `tv` (for consumer recipes) + class mergers.
+export { cn, cx, tv, type VariantProps } from './tv';
