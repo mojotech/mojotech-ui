@@ -60,6 +60,7 @@
     "prepublishOnly": "bun run build"
   },
   "dependencies": {
+    "tailwind-merge": "^3.6.0",
     "tailwind-variants": "^3.2.2"
   },
   "peerDependencies": {
