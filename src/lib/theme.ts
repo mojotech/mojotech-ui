@@ -28,10 +28,9 @@ const theme = {
     "calc(176px + (352 - 176) * ((100vw - 400px) / (1800 - 400)))",
   ],
   fontFamilies: {
-    main: `'GT America Light', system-ui, sans-serif`,
-    regular: `'GT America Regular', system-ui, sans-serif`,
-    display: `'altis-mojoregular', system-ui, sans-serif`,
-    mono: `'GT America Mono', monospace`,
+    regular: `'Instrument Sans Regular', system-ui, sans-serif`,
+    semibold: `'Instrument Sans Semi Bold', system-ui, sans-serif`,
+    mono: `'Roboto Mono Medium', monospace`,
   },
   fontSizes: [
     "clamp(0.89rem, 0.91rem + -0.07vw, 0.84rem)", //0-BodySmall

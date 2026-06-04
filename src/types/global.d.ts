@@ -25,7 +25,7 @@ export type Theme = {
       color: string;
     };
   };
-  fontFamilies: { main: string; display: string; mono: string };
+  fontFamilies: { regular: string; semibold: string; mono: string };
   maxWidths: string[];
   widths: string[];
   fontSizes: string[];
