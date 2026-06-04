@@ -99,7 +99,7 @@ const Text: React.FC<Props> = styled(polymorph<Props>("p"))<Props>(
 Text.defaultProps = {
   color: "inherit",
   fontSize: 1,
-  fontFamily: "main",
+  fontFamily: "regular",
   textDecoration: "none",
 };
 
